@@ -25,10 +25,10 @@ const HomePage = () => {
             <main className={'lg:w-1/2 py-[6rem]'}>
                 <section className={'mb-[9rem] text-black-text'}>
                     <p>
-                        Hi, I'm Deny Wijaya, a passionate Frontend Developer with 4 years of experience.
-                        My main stack includes React, TypeScript, and Tailwind CSS. I'm currently expanding
+                        Hi, my name Deny Wijaya, a passionate Frontend Developer with 4 years of experience.
+                        My main stack includes React, TypeScript, and Tailwind CSS. I currently expanding
                         my skill set by learning Flutter and Dart for mobile development. I love crafting seamless and
-                        efficient user experiences, and I'm always eager to take on new challenges and improve my
+                        efficient user experiences, and I always eager to take on new challenges and improve my
                         skills.
                     </p>
                 </section>
