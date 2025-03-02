@@ -18,11 +18,17 @@ const config: Config = {
         colors: {
             'black-heading': '#2D2E32',
             'black-text': '#767676',
+            "text-light": "#FFFFFF",
+            'bg-light': '#F4F3ED',
+            'bg-dark': '#000000',
+            'bg-white': '#F7F7F7',
             grey: '#F9F9F9'
         },
         fontFamily: {
             // lora: ["Lora", 'serif'],
-            mulish: ["Mulish", 'sans-serif']
+            // mulish: ["Mulish", 'sans-serif']
+            oswald: ["Oswald", 'sans-serif'],
+            poppins: ["Poppins", 'sans-serif']
 
         },
     },

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -21,7 +23,7 @@
 
 body {
     /*@apply font-lora*/
-    @apply font-mulish
+    @apply font-poppins
     /*color: rgb(var(--foreground-rgb));*/
     /*background: linear-gradient(*/
     /*    to bottom,*/
@@ -36,3 +38,55 @@ body {
         text-wrap: balance;
     }
 }
+
+.hero-image img {
+    @apply w-[400px] rotate-[10deg] rounded-[20px] border-[3px] text-center transition-all duration-500 max-md:mt-0;
+}
+
+.hero-image img:hover {
+    @apply rotate-0 transition-all duration-500;
+}
+
+.background-dark {
+    @apply bg-bg-dark text-text-light;
+}
+
+.background-light {
+    @apply bg-bg-light ;
+}
+
+/* Service Item */
+.service-item {
+    @apply relative rounded-[20px] px-[40px] py-[60px] transition duration-[0.5s] max-md:mb-[30px];
+}
+
+.service-item:hover {
+    @apply transition duration-[0.5s];
+}
+
+.service-item h5 {
+    @apply mb-[60px] inline-block rounded-[6px] border px-[10px] py-[4px] text-[14px]  transition duration-[0.5s];
+}
+
+.service-item:hover h5 {
+    @apply transition duration-[0.5s] bg-bg-dark text-text-light;
+}
+
+.service-item p {
+    @apply mb-0;
+}
+
+.service-item h4 {
+    @apply mb-[20px] mt-[20px] text-[30px] uppercase font-oswald font-[500];
+}
+
+.service-item i {
+    @apply absolute right-[4%] top-[18%] text-[30px] transition duration-[0.5s];
+}
+
+.service-item:hover i {
+    @apply rotate-[45deg];
+}
+
+
+

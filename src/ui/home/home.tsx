@@ -1,4 +1,3 @@
-import '../../../styles/globals.css'
 import CardWork from "@/components/card_work/card_work";
 import portfolioWork from "@/data/portfolio_working";
 import CardProject from "@/components/card_project/card_project";
