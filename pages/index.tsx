@@ -1,14 +1,14 @@
 import Head from "next/head";
-import HomePage2 from "@/ui/v2/home/home2";
+import HomePage3 from "@/ui/v3/home/home3";
 
 const Home = () => {
 
     return (
-        <div className={'w-full'}>
+        <div className={'w-full bg-white dark:bg-primary'}>
             <Head>
                 <link rel="shortcut icon" href="../src/app/__favicon.ico"/>
             </Head>
-            <HomePage2/>
+            <HomePage3/>
         </div>
     )
 }
