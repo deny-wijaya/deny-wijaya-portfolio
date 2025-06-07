@@ -37,7 +37,7 @@ const HomePage3 = () => {
             className={"max-w-2xl mx-auto px-6 py-24 flex flex-col gap-10 bg-white dark:bg-primary"}>
             <header
                 className={`duration-500 ease-out delay-100 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-                <h1 className={'den-title'}>Hi, I'm Deny Wijaya</h1>
+                <h1 className={'den-title'}>Hi, I`m Deny Wijaya</h1>
                 <h2 className={'den-subtitle'}>Frontend Engineer</h2>
             </header>
 
@@ -127,7 +127,7 @@ const HomePage3 = () => {
                 className={`flex flex-col gap-1 duration-500 ease-out delay-500 ${mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
 
                 <h3 className={'den-heading'}>Check Out My Works</h3>
-                <h4 className={'den-heading-item'}>This is my work that I've been choosen</h4>
+                <h4 className={'den-heading-item'}>This is my work that I`ve been choosen</h4>
                 <div className={'grid sm:grid-cols-2 grid-cols-1 gap-2 mt-2'}>
                     <Card
                         type={'Mobile App'}
