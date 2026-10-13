@@ -20,23 +20,24 @@ export default function Hero() {
         )}
       </div>
 
-      <div className="rise flex items-start gap-4 md:gap-[clamp(16px,3vw,40px)]">
+      <div className="rise grid grid-cols-[auto_minmax(0,1fr)] items-end gap-x-4 gap-y-6 md:flex md:items-start md:gap-[clamp(16px,3vw,40px)]">
         <figure className="avatar">
           <Image
             src={profile.portrait.src}
             alt={profile.portrait.alt}
             fill
             priority
-            sizes="(max-width: 859px) 96px, 322px"
+            sizes="(max-width: 859px) 240px, 322px"
           />
         </figure>
-        <div className="min-w-0 flex-1">
-          <p className="m-0 mb-3 font-mono text-[13px] tracking-[0.02em] text-accent md:mb-[22px] md:text-[15px]">
+        {/* Phone: avatar + greeting share row 1, the H1 takes the full width below. */}
+        <div className="contents md:block md:min-w-0 md:flex-1">
+          <p className="m-0 mb-1 self-end font-mono text-[13px] tracking-[0.02em] text-accent md:mb-[22px] md:text-[15px]">
             {hero.hello}
           </p>
           <h1
             id="hero-title"
-            className="m-0 text-[clamp(40px,6.6vw,95px)] leading-[0.98] font-medium tracking-[-0.045em]"
+            className="col-span-2 m-0 text-[clamp(40px,6.6vw,95px)] max-md:text-balance leading-[0.98] font-medium tracking-[-0.045em]"
           >
             {hero.line1}
             <span className="block text-muted">

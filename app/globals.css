@@ -289,7 +289,9 @@
   .grid-12 > * { grid-column: 1 / -1 !important; }
   .sec { padding-top: 104px; }
   .hero-orb { width: 320px; height: 320px; }
-  .avatar { width: 96px; border-radius: 8px; }
+  /* Phone: bigger square avatar, cropped to a half-body portrait (head to waist). */
+  .avatar { width: clamp(112px, 34vw, 160px); aspect-ratio: 1 / 1; margin: 0; border-radius: 8px; }
+  .avatar img { transform: scale(1.65); transform-origin: 50% 10%; }
   .tab[aria-selected="true"]::before { left: 0; right: 0; top: auto; bottom: -1px; width: auto; height: 2px; }
 }
 
