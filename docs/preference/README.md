@@ -73,7 +73,7 @@ Pick one pattern per project. Adjacent projects in the Work section should not u
 | **Wall**: staggered columns of desktop strips and phones, edges bleeding | Marketing or event sites with many distinct sections | `knaub`, `luxury-property` | `layouts/bali-coast-trail.json`, `examples/wall.jpg` |
 | **Long-scroll pair**: two tall page captures that fill the full height, side by side (desktop and mobile, light and dark, or two pages) | Sites where the scroll story is the point (landing pages, content sites) | `zairity`, `taraq`, `aerium` | build from the wall layout with 2 tall tiles |
 | **Hero + chips**: one large screen with 2 or 3 real UI pieces floating over its corners, slightly rotated | Only when the hero can cover at least 75% of the canvas. Otherwise it leaves open background, which fails the density rule | `auto-sharks` | `layouts/example-hero-chips.json`, `examples/hero-chips.jpg` (too sparse as is, enlarge the hero) |
-| **Tilted grid**: many phone screens in staggered columns, whole stage tilted with `perspective` | Mobile apps (Flutter staff app, guide rewards app) | `kaiikit` | `layouts/example-tilted-grid.json`, `examples/tilted-grid.jpg` |
+| **Tilted grid**: many phone screens in staggered columns, whole stage tilted with `perspective` | Mobile apps (Flutter staff app, guide rewards app) | `kaiikit` | `layouts/bali-bird-park.json` (6 screens repeated over 7 columns × 3 rows, no screen next to itself), `examples/tilted-grid.jpg` |
 | **Phone fan**: 3 to 4 phones overlapping in a row, the center one larger and in front | Mobile apps with few but strong screens | `finora` (only the phone arrangement, not the props) | build with `phone` tiles, `rotate` and `z` |
 | **Dashboard focus**: one large admin screen with 2 cropped panels of the same app floating at the edges | Web admin and dashboards (Karna web admin) | `tickettool` (only the screen, not the text column) | build from the hero + chips layout |
 | **Flow storyboard**: 3 to 4 screens of one flow in order, each on its own tinted panel | Multi-step flows such as registration, checkout, onboarding | `careora` | build with `screen` tiles in a 2×2 offset |
@@ -93,6 +93,8 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 ```
 
 1. **Capture.** One command per URL in the layout's `captures` field. Desktop captures at 1440 wide, mobile at 390 wide.
+
+   Mobile apps without a public URL (Bali Bird Park, the Karna staff app) use iOS Simulator screenshots from the owner instead. Copy them into `captures/` with a project prefix (`bbp-home.png`), use the full screenshot as the tile (`"y": 0`, `"kind": "phone"`), and set `srcW` to the device width in points, not pixels: 393 for iPhone 15 Pro (1179 px ÷ 3). Before publishing, check the screens for real personal data such as names, member IDs, QR codes, or balances, and ask the owner whether it may be shown.
 
    ```bash
    node docs/preference/tools/capture.js https://balicoasttrail.com docs/preference/captures/bct-home.png
@@ -150,7 +152,7 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 | Karna | false | Dashboard focus (web admin) with phones from the staff app, not made yet | none yet |
 | Bali Coast Trail | true | Wall | `layouts/bali-coast-trail.json`, `bali-coast-trail-showcase-v2.jpg` (center bottom tile is the BCT50K course map and elevation chart) |
 | Bali Trail Running | false | Bento (v2 hero + chips was rejected as too empty) | `layouts/bali-trail-running.json`, `bali-trail-running-showcase-v3.jpg` |
-| Bali Bird Park | true | Tilted grid or a phone-only bento like `gasfuel-mobile` (mobile app), not made yet | none yet |
+| Bali Bird Park | true | Tilted grid | `layouts/bali-bird-park.json`, `bali-bird-park-showcase.jpg` |
 
 ## Sources
 

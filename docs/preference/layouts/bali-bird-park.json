@@ -1,0 +1,38 @@
+{
+  "pattern": "tilted-grid",
+  "output": "public/images/bali-bird-park-showcase.jpg",
+  "captures": {
+    "bbp-splash.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL",
+    "bbp-login.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL",
+    "bbp-profile.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL",
+    "bbp-info.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL",
+    "bbp-history.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL",
+    "bbp-home.png": "iOS Simulator screenshot (iPhone 15 Pro, 1179x2556) from the owner, not a URL"
+  },
+  "srcDir": "../captures",
+  "background": "linear-gradient(135deg,#173d08 0%,#2f6b12 55%,#5aa832 100%)",
+  "stage": "perspective(2600px) rotateX(24deg) rotateZ(-22deg) scale(1.12)",
+  "tiles": [
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":-260,"top":-280,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-info.png","srcW":393,"y":0,"x":-260,"top":292,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":-260,"top":864,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-profile.png","srcW":393,"y":0,"x":20,"top":-40,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-home.png","srcW":393,"y":0,"x":20,"top":532,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-profile.png","srcW":393,"y":0,"x":20,"top":1104,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-history.png","srcW":393,"y":0,"x":300,"top":-400,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-login.png","srcW":393,"y":0,"x":300,"top":172,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-history.png","srcW":393,"y":0,"x":300,"top":744,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":580,"top":-160,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-info.png","srcW":393,"y":0,"x":580,"top":412,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":580,"top":984,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-profile.png","srcW":393,"y":0,"x":860,"top":-360,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-home.png","srcW":393,"y":0,"x":860,"top":212,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-profile.png","srcW":393,"y":0,"x":860,"top":784,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-history.png","srcW":393,"y":0,"x":1140,"top":-80,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-login.png","srcW":393,"y":0,"x":1140,"top":492,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-history.png","srcW":393,"y":0,"x":1140,"top":1064,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":1420,"top":-320,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-info.png","srcW":393,"y":0,"x":1420,"top":252,"w":250,"h":542,"kind":"phone"},
+    {"src":"bbp-splash.png","srcW":393,"y":0,"x":1420,"top":824,"w":250,"h":542,"kind":"phone"}
+  ]
+}

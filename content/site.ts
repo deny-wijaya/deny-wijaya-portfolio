@@ -198,7 +198,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Flutter", "REST API", "Mobile"],
     tagsLabel: "Stack",
     link: null,
-    image: null,
+    image: "/images/bali-bird-park-showcase.jpg",
     placeholder: {
       title: "Bali Bird Park — guide rewards app",
       subtitle: "Replace with real phone screenshots",
