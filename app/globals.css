@@ -12,7 +12,9 @@
   --shadow-avatar:0 14px 36px -16px color-mix(in srgb,var(--accent) 45%,transparent);
   --shadow-btn:0 10px 28px -10px color-mix(in srgb,var(--accent) 60%,transparent);
   --ok-glow:none; --orb-opacity:.35; --tint-amount:6%; --tint-blend:multiply;
-  --lamp:#FFC53D; --lamp-stroke:#7A4E00;
+  --lamp:#FFC53D;
+  --bulb-outline:#D47F16; --bulb-glass:#FFD23F; --bulb-glow:#FFE97A; --bulb-highlight:#FFFBE6;
+  --bulb-shade:#F5AE2A; --bulb-filament:#FFF4BD;
   color-scheme: light;
 }
 [data-theme="dark"] {
@@ -26,7 +28,9 @@
   --shadow-avatar:0 0 32px color-mix(in srgb,var(--accent) 22%,transparent);
   --shadow-btn:0 8px 30px -8px color-mix(in srgb,var(--accent) 70%,transparent);
   --ok-glow:0 0 12px #3DDC84; --orb-opacity:.75; --tint-amount:16%; --tint-blend:screen;
-  --lamp:#FFC53D; --lamp-stroke:#7A4E00;
+  --lamp:#FFC53D;
+  --bulb-outline:#4F8D9D; --bulb-glass:#A6DAE4; --bulb-glow:#BFE6EE; --bulb-highlight:#F2FBFD;
+  --bulb-shade:#88C3D0; --bulb-filament:#6A9FAD;
   color-scheme: dark;
 }
 
@@ -229,27 +233,25 @@
   width: 56px; height: 56px; padding: 0; cursor: pointer;
   border: 1px solid var(--line); border-radius: 999px;
   background: var(--glass); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
-  color: var(--muted); transform-origin: 50% 0;
-  transition: color .3s ease, border-color .3s ease, box-shadow .4s ease;
+  transform-origin: 50% 0;
+  transition: border-color .3s ease, box-shadow .4s ease;
 }
-.lamp:hover { color: var(--ink); border-color: color-mix(in srgb, var(--lamp) 40%, var(--line)); }
-.lamp-glass { fill: transparent; transition: fill .3s ease; }
-.lamp:hover .lamp-glass { fill: color-mix(in srgb, var(--lamp) 14%, transparent); }
-.lamp-rays { opacity: 0; transform: scale(.7); transform-origin: 16px 14px; transition: opacity .3s ease, transform .3s ease; }
+.lamp:hover { border-color: color-mix(in srgb, var(--bulb-outline) 45%, var(--line)); }
+.lamp-bulb { display: block; image-rendering: pixelated; transition: filter .3s ease; }
+.lamp:hover .lamp-bulb { filter: brightness(1.08); }
 
 /* on = light theme */
 [data-theme="light"] .lamp {
-  color: var(--lamp-stroke);
   border-color: color-mix(in srgb, var(--lamp) 60%, var(--line));
   box-shadow:
     0 0 0 6px color-mix(in srgb, var(--lamp) 18%, transparent),
     0 12px 36px -8px color-mix(in srgb, var(--lamp) 80%, transparent);
 }
-[data-theme="light"] .lamp-glass { fill: var(--lamp); }
-[data-theme="light"] .lamp-rays { opacity: 1; transform: none; color: color-mix(in srgb, var(--lamp) 70%, var(--lamp-stroke)); }
+[data-theme="light"] .lamp-bulb { filter: drop-shadow(0 0 6px color-mix(in srgb, var(--lamp) 70%, transparent)); }
+[data-theme="light"] .lamp:hover .lamp-bulb { filter: brightness(1.05) drop-shadow(0 0 8px var(--lamp)); }
 
 .lamp.is-switching { animation: lamp-swing .7s cubic-bezier(.2,.7,.2,1); }
-[data-theme="light"] .lamp.is-switching .lamp-glass { animation: lamp-flicker .45s steps(1); }
+[data-theme="light"] .lamp.is-switching .lamp-bulb { animation: lamp-flicker .45s steps(1); }
 
 @keyframes lamp-swing {
   0% { transform: rotate(0); }
@@ -259,12 +261,12 @@
   100% { transform: rotate(0); }
 }
 @keyframes lamp-flicker {
-  0% { fill-opacity: .15; }
-  20% { fill-opacity: 1; }
-  35% { fill-opacity: .3; }
-  55% { fill-opacity: 1; }
-  70% { fill-opacity: .6; }
-  100% { fill-opacity: 1; }
+  0% { opacity: .35; }
+  20% { opacity: 1; }
+  35% { opacity: .5; }
+  55% { opacity: 1; }
+  70% { opacity: .75; }
+  100% { opacity: 1; }
 }
 
 @media (min-width: 860px) { .lamp { right: 24px; bottom: 24px; } }

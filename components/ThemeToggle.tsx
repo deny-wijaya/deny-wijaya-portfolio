@@ -14,6 +14,61 @@ function subscribe(onChange: () => void) {
   return () => observer.disconnect();
 }
 
+/**
+ * 8-bit bulb, 16x20 cells. Each letter is a color role; the colors come from
+ * the --bulb-* tokens, so the same drawing is lit in light mode and unlit in dark.
+ * O outline, G glass, L inner glow, H highlight, S shade, F filament,
+ * W/B/D base (light, mid, dark), T tip.
+ */
+const BULB = [
+  "....OOOOOOOO....",
+  "..OOGGGGGGGGOO..",
+  ".OGGHHGGGGGGGSO.",
+  ".OGHHGGGGGGGGSO.",
+  "OGGHGGLLLLGGGGSO",
+  "OGGHGLLLLLLGGGSO",
+  "OGGGGLLLLLLGGGSO",
+  "OGGGGFLFFLFGGGSO",
+  "OGGGGLFLLFLGGGSO",
+  ".OGGGGFGGFGGGSO.",
+  ".OGGGGFGGFGGGSO.",
+  "..OGGGFGGFGGSO..",
+  "...OGGFGGFGSO...",
+  "...OOOOOOOOOO...",
+  "....WBBBBBBD....",
+  "....DDDDDDDD....",
+  "....WBBBBBBD....",
+  "....DDDDDDDD....",
+  ".....TTTTTT.....",
+  "......TTTT......",
+];
+
+const FILL: Record<string, string> = {
+  O: "var(--bulb-outline)",
+  G: "var(--bulb-glass)",
+  L: "var(--bulb-glow)",
+  H: "var(--bulb-highlight)",
+  S: "var(--bulb-shade)",
+  F: "var(--bulb-filament)",
+  W: "#C9CACE",
+  B: "#9A9BA1",
+  D: "#6C6D73",
+  T: "#47484D",
+};
+
+// Merge same-color runs on each row so the SVG stays small.
+const PIXELS = BULB.flatMap((row, y) => {
+  const runs: { x: number; y: number; w: number; c: string }[] = [];
+  for (let x = 0; x < row.length; x++) {
+    const c = row[x];
+    if (c === ".") continue;
+    const last = runs[runs.length - 1];
+    if (last && last.c === c && last.x + last.w === x) last.w++;
+    else runs.push({ x, y, w: 1, c });
+  }
+  return runs;
+});
+
 /** Floating light bulb: on = light theme, off = dark theme. */
 export default function ThemeToggle() {
   const theme = useSyncExternalStore<Theme | null>(subscribe, readTheme, () => null);
@@ -49,26 +104,17 @@ export default function ThemeToggle() {
       title={label}
       className="lamp"
     >
-      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
-        <g className="lamp-rays" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
-          <path d="M16 1.5v1.75M5.4 4.9l1.25 1.25M26.6 4.9l-1.25 1.25M1.75 13.5h1.75M28.5 13.5h1.75" />
-        </g>
-        <path
-          className="lamp-glass"
-          d="M16 5.5a8 8 0 0 0-5 14.25c.95.85 1.6 1.9 1.6 3.25h6.8c0-1.35.65-2.4 1.6-3.25A8 8 0 0 0 16 5.5z"
-          stroke="currentColor"
-          strokeWidth="1.5"
-          strokeLinejoin="round"
-        />
-        <path
-          className="lamp-filament"
-          d="M14 23v-5.25l-1-1.5M18 23v-5.25l1-1.5M13 16.25l1.5 1.5 1.5-1.5 1.5 1.5 1.5-1.5"
-          stroke="currentColor"
-          strokeWidth="1.25"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-        <path d="M12.75 25.5h6.5M13.75 28h4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+      <svg
+        className="lamp-bulb"
+        width="32"
+        height="40"
+        viewBox="0 0 16 20"
+        shapeRendering="crispEdges"
+        aria-hidden="true"
+      >
+        {PIXELS.map((p) => (
+          <rect key={`${p.x}-${p.y}`} x={p.x} y={p.y} width={p.w} height={1} fill={FILL[p.c]} />
+        ))}
       </svg>
     </button>
   );
