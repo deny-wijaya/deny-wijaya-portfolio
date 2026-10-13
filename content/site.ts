@@ -103,7 +103,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Flutter", "Vue.js", "Mobile app", "Web admin"],
     tagsLabel: "Stack",
     link: { label: "karna.pro", href: "https://karna.pro" },
-    image: null,
+    image: "/images/karna-showcase.jpg",
     placeholder: {
       title: "Karna — web admin & staff app",
       subtitle: "Replace with real screenshots from karna.pro",

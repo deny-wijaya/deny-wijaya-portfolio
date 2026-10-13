@@ -75,7 +75,7 @@ Pick one pattern per project. Adjacent projects in the Work section should not u
 | **Hero + chips**: one large screen with 2 or 3 real UI pieces floating over its corners, slightly rotated | Only when the hero can cover at least 75% of the canvas. Otherwise it leaves open background, which fails the density rule | `auto-sharks` | `layouts/example-hero-chips.json`, `examples/hero-chips.jpg` (too sparse as is, enlarge the hero) |
 | **Tilted grid**: many phone screens in staggered columns, whole stage tilted with `perspective` | Mobile apps (Flutter staff app, guide rewards app) | `kaiikit` | `layouts/bali-bird-park.json` (6 screens repeated over 7 columns × 3 rows, no screen next to itself), `examples/tilted-grid.jpg` |
 | **Phone fan**: 3 to 4 phones overlapping in a row, the center one larger and in front | Mobile apps with few but strong screens | `finora` (only the phone arrangement, not the props) | build with `phone` tiles, `rotate` and `z` |
-| **Dashboard focus**: one large admin screen with 2 cropped panels of the same app floating at the edges | Web admin and dashboards (Karna web admin) | `tickettool` (only the screen, not the text column) | build from the hero + chips layout |
+| **Dashboard focus**: one large admin screen as the focal tile, with other admin screens and staff-app phones packed around it in a grid | Web admin and dashboards (Karna web admin) | `tickettool` (only the screen, not the text column) | `layouts/karna.json` |
 | **Flow storyboard**: 3 to 4 screens of one flow in order, each on its own tinted panel | Multi-step flows such as registration, checkout, onboarding | `careora` | build with `screen` tiles in a 2×2 offset |
 
 Avoid these even though they look good on Dribbble:
@@ -149,7 +149,7 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 
 | Project | `reversed` | Pattern | Layout and image |
 | --- | --- | --- | --- |
-| Karna | false | Dashboard focus (web admin) with phones from the staff app, not made yet | none yet |
+| Karna | false | Dashboard focus as a dense grid: appointment book as focal tile, staff-app phones in a tinted panel, dashboard, AI chat and service form below | `layouts/karna.json`, `karna-showcase.jpg` (owner screenshots, not URL captures) |
 | Bali Coast Trail | true | Wall | `layouts/bali-coast-trail.json`, `bali-coast-trail-showcase-v2.jpg` (center bottom tile is the BCT50K course map and elevation chart) |
 | Bali Trail Running | false | Bento (v2 hero + chips was rejected as too empty) | `layouts/bali-trail-running.json`, `bali-trail-running-showcase-v3.jpg` |
 | Bali Bird Park | true | Tilted grid | `layouts/bali-bird-park.json`, `bali-bird-park-showcase.jpg` |

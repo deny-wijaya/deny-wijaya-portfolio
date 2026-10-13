@@ -1,0 +1,27 @@
+{
+  "pattern": "dashboard-focus",
+  "output": "public/images/karna-showcase.jpg",
+  "captures": {
+    "karna-01a-appointment-book-semua-status.png": "owner screenshot, web admin (2880x1800 px, 1440 css)",
+    "karna-02-chat-ai.png": "owner screenshot, web admin (2704x1688 px, 1352 css)",
+    "karna-03a-dashboard-ringkasan.png": "owner screenshot, web admin (3200x2000 px, 1600 css)",
+    "karna-04b-layanan-form-edit.png": "owner screenshot, web admin (3200x2000 px, 1600 css)",
+    "karna-05-provider-beranda.png": "owner screenshot, staff app (780x1688 px, 390 css)",
+    "karna-07b-provider-jadwal-saya.png": "owner screenshot, staff app (780x1688 px, 390 css)",
+    "karna-06b-provider-customer-riwayat.png": "owner screenshot, staff app (780x1688 px, 390 css)"
+  },
+  "srcDir": "../captures",
+  "background": "linear-gradient(135deg,#0d3550 0%,#16709e 55%,#2aa3d6 100%)",
+  "tiles": [
+    { "src": "karna-01a-appointment-book-semua-status.png", "srcW": 1440, "y": 0, "x": 24, "top": 24, "w": 856, "h": 535 },
+
+    { "kind": "panel", "color": "#e2f2fa", "x": 904, "top": -40, "w": 740, "h": 599 },
+    { "src": "karna-05-provider-beranda.png", "srcW": 390, "y": 0, "x": 932, "top": 50, "w": 220, "h": 476, "kind": "phone", "z": 2 },
+    { "src": "karna-07b-provider-jadwal-saya.png", "srcW": 390, "y": 0, "x": 1176, "top": 90, "w": 220, "h": 476, "kind": "phone", "z": 2 },
+    { "src": "karna-06b-provider-customer-riwayat.png", "srcW": 390, "y": 0, "x": 1420, "top": 30, "w": 220, "h": 476, "kind": "phone", "z": 2 },
+
+    { "src": "karna-03a-dashboard-ringkasan.png", "srcW": 1600, "sx": 256, "y": 135, "scale": 0.55, "x": 24, "top": 583, "w": 536, "h": 457 },
+    { "src": "karna-02-chat-ai.png", "srcW": 1352, "sx": 470, "y": 0, "scale": 0.635, "x": 584, "top": 583, "w": 560, "h": 457 },
+    { "src": "karna-04b-layanan-form-edit.png", "srcW": 1600, "sx": 1150, "y": 60, "scale": 1.06, "x": 1168, "top": 583, "w": 476, "h": 457 }
+  ]
+}
