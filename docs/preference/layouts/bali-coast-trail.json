@@ -1,10 +1,11 @@
 {
   "pattern": "wall",
-  "output": "public/images/bali-coast-trail-showcase.jpg",
+  "output": "public/images/bali-coast-trail-showcase-v2.jpg",
   "captures": {
     "bct-home.png": "https://balicoasttrail.com",
     "bct-home-m.png": "https://balicoasttrail.com --mobile",
-    "bct-50k.png": "https://balicoasttrail.com/categories/bct50k"
+    "bct-50k.png": "https://balicoasttrail.com/categories/bct50k",
+    "bct-50k-map.png": "capture-element.js https://balicoasttrail.com/categories/bct50k \"section:has(iframe)\" --height 1300 --settle 15000"
   },
   "srcDir": "../captures",
   "background": "linear-gradient(135deg,#0a2f6b 0%,#0b4f9c 55%,#1a8fd1 100%)",
@@ -14,7 +15,7 @@
     { "src": "bct-home.png", "srcW": 1440, "y": 4300, "x": -70, "top": 700, "w": 390, "h": 340 },
 
     { "src": "bct-home.png", "srcW": 1440, "y": 0, "x": 350, "top": 70, "w": 800, "h": 500 },
-    { "src": "bct-50k.png", "srcW": 1440, "y": 0, "x": 350, "top": 600, "w": 800, "h": 440 },
+    { "src": "bct-50k-map.png", "srcW": 1440, "sx": 60, "y": 300, "scale": 0.6, "x": 350, "top": 600, "w": 800, "h": 440 },
 
     { "src": "bct-home-m.png", "srcW": 390, "y": 0, "x": 1185, "top": -150, "w": 215, "h": 465, "kind": "phone" },
     { "src": "bct-home-m.png", "srcW": 390, "y": 1130, "x": 1185, "top": 350, "w": 215, "h": 465, "kind": "phone" },

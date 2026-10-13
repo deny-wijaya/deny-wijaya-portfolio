@@ -1,10 +1,11 @@
 // Full-page capture of a live page for showcase collages.
 //
-// usage: node capture.js <url> <out.png> [--width 1440] [--height 900] [--mobile] [--wait 6000]
+// usage: node capture.js <url> <out.png> [--width 1440] [--height 900] [--mobile] [--wait 6000] [--settle 2500]
 //
 // Captures at 2x device scale. Scrolls the page first so scroll-reveal sections
 // and lazy images render. Check every output: skeleton loaders, cookie banners,
 // rate-limit pages and blank embeds (maps, iframes) must not end up in a collage.
+// Embeds load late: if a map or iframe is blank, rerun with --settle 15000.
 const { chromium } = require("playwright-core");
 
 function arg(name, fallback) {
@@ -18,6 +19,7 @@ function arg(name, fallback) {
   const width = +arg("--width", mobile ? 390 : 1440);
   const height = +arg("--height", mobile ? 844 : 900);
   const wait = +arg("--wait", 6000);
+  const settle = +arg("--settle", 2500);
 
   const browser = await chromium.launch({ channel: "chrome" });
   const page = await browser.newPage({
@@ -33,10 +35,10 @@ function arg(name, fallback) {
   const total = await page.evaluate(() => document.documentElement.scrollHeight);
   for (let y = 0; y < total; y += 400) {
     await page.evaluate((y) => window.scrollTo(0, y), y);
-    await page.waitForTimeout(150);
+    await page.waitForTimeout(settle > 2500 ? 600 : 150);
   }
   await page.evaluate(() => window.scrollTo(0, 0));
-  await page.waitForTimeout(2500);
+  await page.waitForTimeout(settle);
 
   await page.screenshot({ path: out, fullPage: true });
   console.log(`${out}  ${width}px wide, ${total}px tall (css px)`);

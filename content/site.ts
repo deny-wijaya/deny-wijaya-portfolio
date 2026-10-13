@@ -152,7 +152,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Next.js", "Event site"],
     tagsLabel: "Stack",
     link: { label: "balicoasttrail.com", href: "https://balicoasttrail.com" },
-    image: "/images/bali-coast-trail-showcase.jpg",
+    image: "/images/bali-coast-trail-showcase-v2.jpg",
     placeholder: {
       title: "Bali Coast Trail — hero section",
       subtitle: "Replace with a real crop of balicoasttrail.com",

@@ -24,6 +24,7 @@ What they share: the frame is full. Screens fill almost the whole canvas, the ba
 | --- | --- | --- |
 | `README.md` | This guide | yes |
 | `tools/capture.js` | Full-page capture of a live URL (desktop or mobile) | yes |
+| `tools/capture-element.js` | Captures one section or embed (maps, iframes, canvas) that renders blank in a full-page capture | yes |
 | `tools/render.js` | Renders a layout JSON into a 16:10 collage | yes |
 | `tools/fetch-samples.sh` | Downloads the Dribbble reference shots into `samples/` | yes |
 | `tools/check-card.js` | Screenshots one Work card in light, dark, and mobile to check the result on the real page | yes |
@@ -98,7 +99,7 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
    node docs/preference/tools/capture.js https://balicoasttrail.com docs/preference/captures/bct-home-m.png --mobile
    ```
 
-   Open every capture before using it. Skeleton loaders, cookie banners, rate-limit pages, and blank maps or iframes must not reach the collage. Production sites can rate limit: capture each URL once, and wait a few minutes before retrying.
+   Open every capture before using it. Skeleton loaders, cookie banners, rate-limit pages, and blank maps or iframes must not reach the collage. Embeds such as maps often stay blank in a full-page capture because the page is photographed in slices. Capture them on their own with `capture-element.js` and a viewport tall enough for the whole embed, for example `node docs/preference/tools/capture-element.js https://balicoasttrail.com/categories/bct50k "section:has(iframe)" docs/preference/captures/bct-50k-map.png --height 1300`. Production sites can rate limit: capture each URL once, and wait a few minutes before retrying.
 
 2. **Find crop offsets.** Downscale a capture to see where sections start (`sips --resampleWidth 500 in.png --out thumb.png`). Convert thumbnail pixels to css px with `cssY = thumbY × (captureCssWidth / 500)`.
 
@@ -147,7 +148,7 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 | Project | `reversed` | Pattern | Layout and image |
 | --- | --- | --- | --- |
 | Karna | false | Dashboard focus (web admin) with phones from the staff app, not made yet | none yet |
-| Bali Coast Trail | true | Wall | `layouts/bali-coast-trail.json`, `bali-coast-trail-showcase.jpg` |
+| Bali Coast Trail | true | Wall | `layouts/bali-coast-trail.json`, `bali-coast-trail-showcase-v2.jpg` (center bottom tile is the BCT50K course map and elevation chart) |
 | Bali Trail Running | false | Bento (v2 hero + chips was rejected as too empty) | `layouts/bali-trail-running.json`, `bali-trail-running-showcase-v3.jpg` |
 | Bali Bird Park | true | Tilted grid or a phone-only bento like `gasfuel-mobile` (mobile app), not made yet | none yet |
 
