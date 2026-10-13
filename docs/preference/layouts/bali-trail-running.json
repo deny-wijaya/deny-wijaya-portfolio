@@ -1,6 +1,6 @@
 {
-  "pattern": "wall",
-  "output": "public/images/bali-trail-running-showcase.jpg",
+  "pattern": "hero-chips",
+  "output": "public/images/bali-trail-running-showcase-v2.jpg",
   "captures": {
     "btr-home.png": "https://app.balitrailrunning.com",
     "btr-home-m.png": "https://app.balitrailrunning.com --mobile",
@@ -11,20 +11,10 @@
   "srcDir": "../captures",
   "background": "linear-gradient(135deg,#0b5f96 0%,#1593c9 55%,#3cc3e8 100%)",
   "tiles": [
-    { "src": "btr-register.png", "srcW": 1440, "y": 0, "x": -70, "top": -40, "w": 390, "h": 244 },
-    { "src": "btr-home.png", "srcW": 1440, "y": 940, "x": -70, "top": 235, "w": 390, "h": 330 },
-    { "src": "btr-home.png", "srcW": 1440, "y": 540, "x": -70, "top": 596, "w": 390, "h": 300 },
-    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": -70, "top": 927, "w": 390, "h": 244 },
+    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": 70, "top": 110, "w": 1090, "h": 660 },
 
-    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": 350, "top": 70, "w": 800, "h": 500 },
-    { "src": "btr-login.png", "srcW": 1440, "y": 0, "x": 350, "top": 600, "w": 800, "h": 500 },
-
-    { "src": "btr-home-m.png", "srcW": 390, "y": 0, "x": 1185, "top": -70, "w": 215, "h": 465, "kind": "phone" },
-    { "src": "btr-home-m.png", "srcW": 390, "y": 760, "x": 1185, "top": 430, "w": 215, "h": 465, "kind": "phone" },
-    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 1185, "top": 930, "w": 215, "h": 465, "kind": "phone" },
-
-    { "src": "btr-register.png", "srcW": 1440, "y": 0, "x": 1435, "top": 30, "w": 400, "h": 250 },
-    { "src": "btr-home.png", "srcW": 1440, "y": 940, "x": 1435, "top": 310, "w": 400, "h": 330 },
-    { "src": "btr-login.png", "srcW": 1440, "y": 0, "x": 1435, "top": 670, "w": 400, "h": 250 }
+    { "src": "btr-register.png", "srcW": 1440, "sx": 850, "y": 40, "scale": 0.62, "x": 1100, "top": 30, "w": 285, "h": 420, "kind": "chip", "rotate": 3, "z": 2 },
+    { "src": "btr-home-m.png", "srcW": 390, "y": 300, "x": 975, "top": 500, "w": 230, "h": 498, "kind": "phone", "rotate": 6, "z": 3 },
+    { "src": "btr-login.png", "srcW": 1440, "sx": 850, "y": 165, "scale": 0.62, "x": 40, "top": 610, "w": 285, "h": 330, "kind": "chip", "rotate": -4, "z": 2 }
   ]
 }

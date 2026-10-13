@@ -1,6 +1,6 @@
 {
   "pattern": "hero-chips",
-  "note": "Starter layout for one strong screen. Chips are real UI pieces cropped from the same captures (sx/y/scale), never invented widgets.",
+  "note": "Starter layout for one strong screen. Chips are real UI pieces cropped from the same captures (sx/y/scale), never invented widgets. This starter ignores the text panel: shift the hero away from the panel side (see layouts/bali-trail-running.json for a reversed:false version).",
   "srcDir": "../captures",
   "background": "linear-gradient(135deg,#0b5f96 0%,#1593c9 55%,#3cc3e8 100%)",
   "tiles": [
