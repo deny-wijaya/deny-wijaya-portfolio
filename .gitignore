@@ -34,3 +34,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# showcase tooling: raw captures and third-party reference shots stay local
+/docs/preference/captures/
+/docs/preference/samples/

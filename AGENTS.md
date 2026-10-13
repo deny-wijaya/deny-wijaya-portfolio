@@ -37,4 +37,4 @@ Use yarn so `yarn.lock` stays the only lockfile.
 ## Content
 
 - Edit copy in `content/site.ts`. Site copy is in English and must match the PRD; do not add metrics or claims that are not in it.
-- To replace a project placeholder with a real screenshot, put the image in `public/images/` and set `image` on that project (16:10 ratio). For the About portrait, set `profile.aboutPhoto` (3:4 ratio).
+- Project images in the Work section are showcase collages built from real screenshots. Before making or changing one, read `docs/preference/README.md` and follow its house style, patterns, and checklist. Put the result in `public/images/` as `<id>-showcase.jpg` and set `image` on that project (16:10 ratio). For the About portrait, set `profile.aboutPhoto` (3:4 ratio).

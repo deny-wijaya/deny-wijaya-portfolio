@@ -1,0 +1,13 @@
+{
+  "pattern": "hero-chips",
+  "note": "Starter layout for one strong screen. Chips are real UI pieces cropped from the same captures (sx/y/scale), never invented widgets.",
+  "srcDir": "../captures",
+  "background": "linear-gradient(135deg,#0b5f96 0%,#1593c9 55%,#3cc3e8 100%)",
+  "tiles": [
+    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": 220, "top": 120, "w": 1160, "h": 725 },
+
+    { "src": "btr-home.png", "srcW": 1440, "sx": 95, "y": 930, "scale": 0.8, "x": 90, "top": 560, "w": 360, "h": 345, "kind": "chip", "rotate": -4, "z": 2 },
+    { "src": "btr-register.png", "srcW": 1440, "sx": 850, "y": 40, "scale": 0.62, "x": 1200, "top": 70, "w": 285, "h": 420, "kind": "chip", "rotate": 3, "z": 2 },
+    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 1250, "top": 540, "w": 215, "h": 465, "kind": "phone", "rotate": 6, "z": 3 }
+  ]
+}

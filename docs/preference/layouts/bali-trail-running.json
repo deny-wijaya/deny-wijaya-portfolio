@@ -1,0 +1,30 @@
+{
+  "pattern": "wall",
+  "output": "public/images/bali-trail-running-showcase.jpg",
+  "captures": {
+    "btr-home.png": "https://app.balitrailrunning.com",
+    "btr-home-m.png": "https://app.balitrailrunning.com --mobile",
+    "btr-login.png": "https://app.balitrailrunning.com/login",
+    "btr-register.png": "https://app.balitrailrunning.com/register",
+    "btr-register-m.png": "https://app.balitrailrunning.com/register --mobile"
+  },
+  "srcDir": "../captures",
+  "background": "linear-gradient(135deg,#0b5f96 0%,#1593c9 55%,#3cc3e8 100%)",
+  "tiles": [
+    { "src": "btr-register.png", "srcW": 1440, "y": 0, "x": -70, "top": -40, "w": 390, "h": 244 },
+    { "src": "btr-home.png", "srcW": 1440, "y": 940, "x": -70, "top": 235, "w": 390, "h": 330 },
+    { "src": "btr-home.png", "srcW": 1440, "y": 540, "x": -70, "top": 596, "w": 390, "h": 300 },
+    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": -70, "top": 927, "w": 390, "h": 244 },
+
+    { "src": "btr-home.png", "srcW": 1440, "y": 0, "x": 350, "top": 70, "w": 800, "h": 500 },
+    { "src": "btr-login.png", "srcW": 1440, "y": 0, "x": 350, "top": 600, "w": 800, "h": 500 },
+
+    { "src": "btr-home-m.png", "srcW": 390, "y": 0, "x": 1185, "top": -70, "w": 215, "h": 465, "kind": "phone" },
+    { "src": "btr-home-m.png", "srcW": 390, "y": 760, "x": 1185, "top": 430, "w": 215, "h": 465, "kind": "phone" },
+    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 1185, "top": 930, "w": 215, "h": 465, "kind": "phone" },
+
+    { "src": "btr-register.png", "srcW": 1440, "y": 0, "x": 1435, "top": 30, "w": 400, "h": 250 },
+    { "src": "btr-home.png", "srcW": 1440, "y": 940, "x": 1435, "top": 310, "w": 400, "h": 330 },
+    { "src": "btr-login.png", "srcW": 1440, "y": 0, "x": 1435, "top": 670, "w": 400, "h": 250 }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "pattern": "tilted-grid",
+  "note": "Starter layout for mobile-first products. Phones in staggered columns, whole stage tilted. Swap src/y for the real project.",
+  "srcDir": "../captures",
+  "background": "linear-gradient(135deg,#0b5f96 0%,#1593c9 55%,#3cc3e8 100%)",
+  "stage": "perspective(2600px) rotateX(24deg) rotateZ(-22deg) scale(1.15)",
+  "tiles": [
+    { "src": "btr-home-m.png", "srcW": 390, "y": 0, "x": 230, "top": -260, "w": 250, "h": 541, "kind": "phone" },
+    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 230, "top": 320, "w": 250, "h": 541, "kind": "phone" },
+
+    { "src": "btr-home-m.png", "srcW": 390, "y": 760, "x": 520, "top": -60, "w": 250, "h": 541, "kind": "phone" },
+    { "src": "btr-home-m.png", "srcW": 390, "y": 0, "x": 520, "top": 520, "w": 250, "h": 541, "kind": "phone" },
+
+    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 810, "top": -320, "w": 250, "h": 541, "kind": "phone" },
+    { "src": "btr-home-m.png", "srcW": 390, "y": 300, "x": 810, "top": 260, "w": 250, "h": 541, "kind": "phone" },
+
+    { "src": "btr-home-m.png", "srcW": 390, "y": 690, "x": 1100, "top": -120, "w": 250, "h": 541, "kind": "phone" },
+    { "src": "btr-register-m.png", "srcW": 390, "y": 0, "x": 1100, "top": 460, "w": 250, "h": 541, "kind": "phone" }
+  ]
+}
