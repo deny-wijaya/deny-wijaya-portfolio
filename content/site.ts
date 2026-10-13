@@ -152,7 +152,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Next.js", "Event site"],
     tagsLabel: "Stack",
     link: { label: "balicoasttrail.com", href: "https://balicoasttrail.com" },
-    image: null,
+    image: "/images/bali-coast-trail.jpg",
     placeholder: {
       title: "Bali Coast Trail — hero section",
       subtitle: "Replace with a real crop of balicoasttrail.com",
@@ -175,7 +175,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Web platform", "Registration", "Payments"],
     tagsLabel: "Type",
     link: { label: "app.balitrailrunning.com", href: "https://app.balitrailrunning.com" },
-    image: null,
+    image: "/images/bali-trail-running.jpg",
     placeholder: {
       title: "Bali Trail Running — registration flow",
       subtitle: "Replace with a real screenshot of app.balitrailrunning.com",
