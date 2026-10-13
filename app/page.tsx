@@ -1,5 +1,6 @@
 import { profile, site } from "@/content/site";
 import Nav from "@/components/Nav";
+import ThemeToggle from "@/components/ThemeToggle";
 import SideRails from "@/components/SideRails";
 import Hero from "@/components/Hero";
 import Work from "@/components/Work";
@@ -41,6 +42,7 @@ export default function Home() {
         <Skills />
       </main>
       <Contact />
+      <ThemeToggle />
     </>
   );
 }

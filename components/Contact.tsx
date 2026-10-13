@@ -55,7 +55,7 @@ export default function Contact() {
       </div>
 
       <footer className="border-t border-line">
-        <div className="wrap flex flex-wrap items-center justify-between gap-4 pt-7 pb-9 text-[14px] text-muted">
+        <div className="wrap flex flex-wrap items-center justify-between gap-4 pt-7 pb-9 text-[14px] md:pb-24 text-muted">
           <span>
             © {year} {profile.name}
           </span>

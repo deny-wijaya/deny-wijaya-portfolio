@@ -1,6 +1,6 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useRef, useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark";
 
@@ -14,8 +14,10 @@ function subscribe(onChange: () => void) {
   return () => observer.disconnect();
 }
 
+/** Floating light bulb: on = light theme, off = dark theme. */
 export default function ThemeToggle() {
   const theme = useSyncExternalStore<Theme | null>(subscribe, readTheme, () => null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   function toggle() {
     const next: Theme = readTheme() === "dark" ? "light" : "dark";
@@ -23,48 +25,50 @@ export default function ThemeToggle() {
     try {
       localStorage.setItem("theme", next);
     } catch {}
+
+    // Restart the swing/flicker animation on every tap.
+    const el = buttonRef.current;
+    if (el) {
+      el.classList.remove("is-switching");
+      void el.offsetWidth;
+      el.classList.add("is-switching");
+    }
   }
 
-  const label = theme === "light" ? "Switch to dark theme" : "Switch to light theme";
+  const label = theme === "light" ? "Turn the light off (dark theme)" : "Turn the light on (light theme)";
 
   return (
     <button
+      ref={buttonRef}
       type="button"
       onClick={toggle}
+      onAnimationEnd={(e) => {
+        if (e.target === e.currentTarget) e.currentTarget.classList.remove("is-switching");
+      }}
       aria-label={label}
       title={label}
-      className="inline-flex size-10 items-center justify-center rounded-[8px] border border-line bg-transparent text-ink transition-colors duration-200 hover:border-accent hover:text-accent"
+      className="lamp"
     >
-      {/* Sun: shown in dark (action goes to light) */}
-      <svg
-        className="hidden dark:block"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <circle cx="12" cy="12" r="4" />
-        <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-      </svg>
-      {/* Moon: shown in light */}
-      <svg
-        className="block dark:hidden"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <g className="lamp-rays" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round">
+          <path d="M16 1.5v1.75M5.4 4.9l1.25 1.25M26.6 4.9l-1.25 1.25M1.75 13.5h1.75M28.5 13.5h1.75" />
+        </g>
+        <path
+          className="lamp-glass"
+          d="M16 5.5a8 8 0 0 0-5 14.25c.95.85 1.6 1.9 1.6 3.25h6.8c0-1.35.65-2.4 1.6-3.25A8 8 0 0 0 16 5.5z"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinejoin="round"
+        />
+        <path
+          className="lamp-filament"
+          d="M14 23v-5.25l-1-1.5M18 23v-5.25l1-1.5M13 16.25l1.5 1.5 1.5-1.5 1.5 1.5 1.5-1.5"
+          stroke="currentColor"
+          strokeWidth="1.25"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path d="M12.75 25.5h6.5M13.75 28h4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
       </svg>
     </button>
   );

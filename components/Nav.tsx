@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import { nav, profile } from "@/content/site";
-import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Nav() {
   const [open, setOpen] = useState(false);
@@ -80,7 +79,6 @@ export default function Nav() {
               Resume <span aria-hidden="true">↗</span>
             </a>
           )}
-          <ThemeToggle />
           <button
             ref={buttonRef}
             type="button"
