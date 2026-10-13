@@ -175,7 +175,7 @@ export const featuredProjects: FeaturedProject[] = [
     tags: ["Web platform", "Registration", "Payments"],
     tagsLabel: "Type",
     link: { label: "app.balitrailrunning.com", href: "https://app.balitrailrunning.com" },
-    image: "/images/bali-trail-running-showcase-v2.jpg",
+    image: "/images/bali-trail-running-showcase-v3.jpg",
     placeholder: {
       title: "Bali Trail Running — registration flow",
       subtitle: "Replace with a real screenshot of app.balitrailrunning.com",

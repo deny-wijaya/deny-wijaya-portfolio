@@ -4,6 +4,20 @@ Read this before making or changing a project image for the Work section (`proje
 
 A showcase is a collage made from real screenshots of the shipped product. It is rendered from a layout JSON with the tools in `tools/`, so it can be adjusted and regenerated instead of hand-edited.
 
+## Owner's picks (the taste to match)
+
+The site owner chose these five shots as the target look. When a rule below is unclear, make the result look more like these.
+
+| Sample | What to take from it |
+| --- | --- |
+| `gasfuel` | Tight bento grid: big desktop screen, phone inside a tinted cell, one cell in the deep brand color, wide section cell. Every cell touches its neighbors with a small gutter. |
+| `zairity` | Two tall pages that fill the full height and run off the bottom and right edges. |
+| `luxury-property` | A wall of many cells where the background only shows as thin gutters. |
+| `taraq` | A long page split into two columns that fill the frame. |
+| `knaub` | Staggered page strips on a strong brand color, cut on every edge. |
+
+What they share: the frame is full. Screens fill almost the whole canvas, the background is only visible as gutters of about 16 to 30px, and tiles run off at least two edges. A first Bali Trail Running attempt used hero + chips with a lot of open background, and the owner rejected it for that reason.
+
 ## Folder map
 
 | Path | What it holds | In git |
@@ -14,7 +28,7 @@ A showcase is a collage made from real screenshots of the shipped product. It is
 | `tools/fetch-samples.sh` | Downloads the Dribbble reference shots into `samples/` | yes |
 | `tools/check-card.js` | Screenshots one Work card in light, dark, and mobile to check the result on the real page | yes |
 | `layouts/*.json` | Layouts for shipped showcases plus starter layouts per pattern | yes |
-| `examples/*.jpg` | Small previews of our own patterns (wall, tilted grid, hero + chips) | yes |
+| `examples/*.jpg` | Small previews of our own patterns (bento, wall, tilted grid, hero + chips) | yes |
 | `captures/` | Raw full-page captures used by the layouts | no (large, regenerable) |
 | `samples/` | Dribbble reference shots | no (other designers' work) |
 
@@ -31,7 +45,8 @@ These rules keep the set consistent. Do not change them per project.
 - **Canvas.** 1600×1000 css px rendered at 2x, exported as a 2400×1500 JPEG (quality 82). The card shows it at 16:10 with `object-cover`, so any other ratio gets cropped.
 - **File name.** The first version is `public/images/<project-id>-showcase.jpg`. When you replace a shipped image, bump the suffix (`-showcase-v2.jpg`, `-showcase-v3.jpg`), point `content/site.ts` at the new file, and `git rm` the old one. A new name keeps the browser and the Next.js image cache from serving the old picture.
 - **Background.** One brand color of the project as a 135deg linear gradient with 2 or 3 stops, dark to light. Take the color from the product itself (Bali Coast Trail navy, Bali Trail Running cyan). No photos, textures, noise, or second hue.
-- **Frames.** Use only the three frame kinds in `render.js`. `screen` has a 14px radius and a soft drop shadow. `phone` has a 34px radius with a 7px `#0d0f14` bezel. `chip` has a 16px radius for small cropped UI pieces. Do not draw browser chrome, laptops, notches, or 3D devices.
+- **Density.** Open background (canvas not covered by any tile or panel) stays at or below about 10% of the canvas. Gutters are 16 to 30px. If you see a gap bigger than a gutter, fill it with a panel, a larger tile, or another crop.
+- **Frames.** Use only the frame kinds in `render.js`. `screen` has a 14px radius and a soft drop shadow. `phone` has a 34px radius with a 7px `#0d0f14` bezel. `chip` has a 16px radius for small cropped UI pieces. `panel` is a flat 20px-radius cell filled with a tint or a deep shade of the brand color, used as a bento cell that holds phones or chips. Do not draw browser chrome, laptops, notches, or 3D devices.
 - **Content.** Only real screenshots of the real product. No added headlines, slogans, logos, stats, badges, cursor arrows, or decorative props. The card already has the project name and copy next to the image, and the PRD forbids claims that are not in it.
 - **Scale.** The image displays at about 840px wide. Main tiles must stay readable at that size, so the hero tile should be at least 700 canvas px wide.
 - **Light and dark.** The collage sits on `bg-paper` in both themes. A saturated brand background works on both. Avoid near-white or near-black backgrounds that merge with the page.
@@ -39,12 +54,12 @@ These rules keep the set consistent. Do not change them per project.
 ## Composition (how to keep it from feeling rigid)
 
 - **One focal tile.** Pick the strongest screen (usually the hero) and make it the largest tile, fully visible, near the center. Everything else supports it.
-- **Bleed off the edges.** For wall, long-scroll pair, and tilted grid, at least two sides of the canvas should cut tiles in half. That makes the product feel bigger than the frame, which is what the Knaub and Luxury Property shots do. Hero + chips, phone fan, dashboard focus, and flow storyboard keep the main tiles inside the canvas, but at least one secondary tile should still run off an edge so the composition does not look boxed in.
+- **Bleed off the edges.** At least two sides of the canvas should cut tiles or panels. That makes the product feel bigger than the frame, which is what all five owner's picks do. Do not bleed the focal tile's header off the top, because the product logo and navigation identify the product.
 - **Stagger, do not align.** Neighboring columns start at different `top` values (offsets of 80 to 500px). Never put tiles in a neat equal grid unless the whole stage is tilted.
 - **Mix sizes and devices.** Combine one large desktop tile, several narrow desktop strips, and 2 or 3 phones. Phones read as "this also works on mobile" without any text.
 - **Show different sections.** Each tile shows a different part of the product (hero, pricing cards, form, list, footer CTA). Do not repeat the same crop within 300px of itself.
 - **Consistent gutters.** Keep about 30px between tiles in the same column and about 35px between columns.
-- **Respect the text panel.** On desktop the glass text panel covers about the outer 22% of the image width (canvas x ≥ 1240 when `reversed: false`, x ≤ 360 when `reversed: true`) in a band from about y = 300 to y = 720. Put the focal tile and any phone fully outside that zone. Only tiles that still read when half hidden (form tops, card headers) may sit under it. On mobile, the project label and title cover about the bottom 20% of the canvas (y ≥ 800), so nothing important goes there either. Always confirm with `tools/check-card.js`.
+- **Respect the text panel.** On desktop the glass text panel covers about the outer 22% of the image width (canvas x ≥ 1240 when `reversed: false`, x ≤ 360 when `reversed: true`) in a band from about y = 300 to y = 720. Put the focal tile and at least one phone fully outside that zone. Only tiles that still read when half hidden (form tops, card headers) may sit under it. On mobile, the project label and title cover about the bottom 20% of the canvas (y ≥ 800), so nothing important goes there either. Always confirm with `tools/check-card.js`.
 - **Crop on meaning.** Start crops at a section heading or the top of a card, not mid-sentence. A crop that shows half a word at the top edge looks accidental.
 
 ## Patterns
@@ -53,9 +68,10 @@ Pick one pattern per project. Adjacent projects in the Work section should not u
 
 | Pattern | Use it when | Dribbble reference | Starter |
 | --- | --- | --- | --- |
+| **Bento**: tight grid of cells. One big desktop cell, a tinted panel holding 1 or 2 phones, a deep-color panel holding a chip, and a wide section cell, all touching with 24px gutters | Web apps and platforms with a few distinct screens (home, list, form, login). The default when unsure | `gasfuel`, `gasfuel-mobile` | `layouts/bali-trail-running.json`, `examples/bento.jpg` |
 | **Wall**: staggered columns of desktop strips and phones, edges bleeding | Marketing or event sites with many distinct sections | `knaub`, `luxury-property` | `layouts/bali-coast-trail.json`, `examples/wall.jpg` |
-| **Long-scroll pair**: two tall page captures side by side, one desktop and one mobile or two desktop pages | Sites where the scroll story is the point (landing pages, content sites) | `taraq`, `aerium` | build from the wall layout with 2 tall tiles |
-| **Hero + chips**: one large screen with 2 or 3 real UI pieces floating over its corners, slightly rotated | Products with one strong screen and a few key components (forms, cards, a price list) | `auto-sharks` | `layouts/example-hero-chips.json`, `examples/hero-chips.jpg` |
+| **Long-scroll pair**: two tall page captures that fill the full height, side by side (desktop and mobile, light and dark, or two pages) | Sites where the scroll story is the point (landing pages, content sites) | `zairity`, `taraq`, `aerium` | build from the wall layout with 2 tall tiles |
+| **Hero + chips**: one large screen with 2 or 3 real UI pieces floating over its corners, slightly rotated | Only when the hero can cover at least 75% of the canvas. Otherwise it leaves open background, which fails the density rule | `auto-sharks` | `layouts/example-hero-chips.json`, `examples/hero-chips.jpg` (too sparse as is, enlarge the hero) |
 | **Tilted grid**: many phone screens in staggered columns, whole stage tilted with `perspective` | Mobile apps (Flutter staff app, guide rewards app) | `kaiikit` | `layouts/example-tilted-grid.json`, `examples/tilted-grid.jpg` |
 | **Phone fan**: 3 to 4 phones overlapping in a row, the center one larger and in front | Mobile apps with few but strong screens | `finora` (only the phone arrangement, not the props) | build with `phone` tiles, `rotate` and `z` |
 | **Dashboard focus**: one large admin screen with 2 cropped panels of the same app floating at the edges | Web admin and dashboards (Karna web admin) | `tickettool` (only the screen, not the text column) | build from the hero + chips layout |
@@ -116,7 +132,8 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 ## Checklist before shipping
 
 - The focal tile and every phone are fully visible on the `check-card.js` screenshots (desktop panel and mobile title included).
-- Edges bleed as the pattern requires (see Bleed off the edges).
+- Open background is at most about 10% of the canvas, and no gap is wider than a gutter (30px) except at bleeding edges.
+- At least two canvas edges cut tiles or panels, and the focal tile's header is not cut.
 - No tile shows a loader, an error, an empty area larger than about a third of the tile, or a black footer as its main content.
 - No crop starts or ends in the middle of a heading.
 - No identical crop appears twice next to each other.
@@ -131,8 +148,8 @@ export NODE_PATH=/tmp/showcase-pw/node_modules
 | --- | --- | --- | --- |
 | Karna | false | Dashboard focus (web admin) with phones from the staff app, not made yet | none yet |
 | Bali Coast Trail | true | Wall | `layouts/bali-coast-trail.json`, `bali-coast-trail-showcase.jpg` |
-| Bali Trail Running | false | Hero + chips | `layouts/bali-trail-running.json`, `bali-trail-running-showcase-v2.jpg` |
-| Bali Bird Park | true | Tilted grid or phone fan (mobile app), not made yet | none yet |
+| Bali Trail Running | false | Bento (v2 hero + chips was rejected as too empty) | `layouts/bali-trail-running.json`, `bali-trail-running-showcase-v3.jpg` |
+| Bali Bird Park | true | Tilted grid or a phone-only bento like `gasfuel-mobile` (mobile app), not made yet | none yet |
 
 ## Sources
 
@@ -140,6 +157,9 @@ Reference shots from Dribbble, used only as layout references. All rights belong
 
 | Sample | Shot | Author |
 | --- | --- | --- |
+| `gasfuel` | [Gas fuel Website](https://dribbble.com/shots/25150457-Gas-fuel-Website) | The Mad Brains |
+| `gasfuel-mobile` | [Gas fuel Website (mobile set)](https://dribbble.com/shots/25150815-Gas-fuel-Website) | The Mad Brains |
+| `zairity` | [Zairity Community and Nonprofit Website Template](https://dribbble.com/shots/26962219-Zairity-Community-Nonprofit-Website-Template) | see shot |
 | `knaub` | [Knaub Home Solutions Marketing Website Showcase](https://dribbble.com/shots/15471312-Knaub-Home-Solutions-Marketing-Website-Showcase) | Matt Olpinski |
 | `luxury-property` | [Luxury Property Website Showcase](https://dribbble.com/shots/27564996-Luxury-Property-Website-Showcase) | UI Wiki Studio |
 | `taraq` | [TARAQ Coffee Shop Website Design](https://dribbble.com/shots/27632426-TARAQ-Coffee-Shop-Website-Design-Coffee-Brand-Ecommerce) | Jabel, Trexa Lab |

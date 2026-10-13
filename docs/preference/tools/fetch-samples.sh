@@ -17,6 +17,9 @@ get() {
   echo "saved samples/$1.jpg"
 }
 
+get gasfuel         17450366/file/original-ba304d4fad61f28bbe77161de8f1ef71.jpg
+get gasfuel-mobile  17451371/file/original-ce798b54b32d0fff1d285048a1b0d4e4.jpg
+get zairity         46314088/file/65fe704a8e4655924489e5053d41d070.png
 get knaub           31350777/file/original-cd34639138ce12ad793f03a0e3552c5f.png
 get luxury-property 48407173/file/24b01d18b9204fe83798494cdf6700ec.png
 get taraq           48656686/file/994367e7f6c4de3f9b17b959536e4ee5.jpg

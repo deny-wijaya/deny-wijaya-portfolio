@@ -16,10 +16,14 @@
 //     "y": 0, "sx": 0,                       // crop origin in the capture, css px
 //     "scale": 0.55,                         // optional, defaults to w / srcW
 //     "x": 350, "top": 70, "w": 800, "h": 500, // tile box on the canvas
-//     "kind": "screen" | "phone" | "chip",   // frame style, default "screen"
+//     "kind": "screen" | "phone" | "chip" | "panel", // frame style, default "screen"
+//     "color": "#e3f4fb",                    // panel only: fill color (a tint of the brand color)
 //     "rotate": 0, "z": 1                    // optional per-tile rotation (deg) and stacking
 //   }]
 // }
+//
+// A "panel" is a colored bento cell with no image. Put phones or chips on top of
+// it with a higher "z" so they sit inside the cell.
 const fs = require("fs");
 const path = require("path");
 const { chromium } = require("playwright-core");
@@ -28,6 +32,10 @@ const W = 1600;
 const H = 1000;
 
 function tile(t, srcDir) {
+  if (t.kind === "panel") {
+    const box = `left:${t.x}px;top:${t.top}px;width:${t.w}px;height:${t.h}px;z-index:${t.z ?? 0};background:${t.color}`;
+    return `<div class="tile panel" style="${box}"></div>`;
+  }
   const scale = t.scale ?? t.w / t.srcW;
   const img = `width:${t.srcW * scale}px;max-width:none;transform:translate(${-(t.sx || 0) * scale}px,${-t.y * scale}px)`;
   const box = [
@@ -55,6 +63,7 @@ function tile(t, srcDir) {
     .screen{border-radius:14px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45),0 0 0 1px rgba(255,255,255,.08)}
     .phone{border-radius:34px;box-shadow:0 30px 60px -20px rgba(0,0,0,.5),0 0 0 7px #0d0f14,0 0 0 8px rgba(255,255,255,.12)}
     .chip{border-radius:16px;box-shadow:0 24px 48px -16px rgba(0,0,0,.4),0 0 0 1px rgba(0,0,0,.06)}
+    .panel{border-radius:20px}
   </style></head><body><div class="stage">${cfg.tiles.map((t) => tile(t, srcDir)).join("")}</div></body></html>`;
 
   const htmlPath = out.replace(/\.png$/, ".html");
