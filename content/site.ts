@@ -40,7 +40,6 @@ export const profile = {
   location: "Denpasar, Bali, Indonesia",
   timezone: "GMT+8",
   email: "denyekayana@gmail.com",
-  github: "https://github.com/deny-wijaya",
   linkedin: "https://www.linkedin.com/in/denywijaya14/",
   available: true,
   availabilityLabel: "Open to remote roles",

@@ -3,7 +3,6 @@ import { contact, profile } from "@/content/site";
 const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, external: false },
   { label: "LinkedIn", value: "in/denywijaya14 ↗", href: profile.linkedin, external: true },
-  { label: "GitHub", value: "deny-wijaya ↗", href: profile.github, external: true },
   ...(profile.resumeUrl
     ? [{ label: "Resume", value: "Download CV (PDF) ↗", href: profile.resumeUrl, external: true }]
     : []),
@@ -36,7 +35,11 @@ export default function Contact() {
           </a>
         </div>
 
-        <ul className="m-0 mt-16 grid list-none grid-cols-1 border-t border-line p-0 text-left md:mt-24 md:grid-cols-4">
+        <ul
+          className={`m-0 mt-16 grid list-none grid-cols-1 border-t border-line p-0 text-left md:mt-24 ${
+            channels.length === 3 ? "md:grid-cols-3" : "md:grid-cols-2"
+          }`}
+        >
           {channels.map((c, i) => (
             <li key={c.label} className={i > 0 ? "max-md:border-t max-md:border-line md:border-l md:border-line" : ""}>
               <a
@@ -63,9 +66,6 @@ export default function Contact() {
           <nav className="flex gap-1" aria-label="Social">
             <a className="inline-flex min-h-11 items-center p-[10px] hover:text-accent" href={profile.linkedin} target="_blank" rel="noopener">
               LinkedIn
-            </a>
-            <a className="inline-flex min-h-11 items-center p-[10px] hover:text-accent" href={profile.github} target="_blank" rel="noopener">
-              GitHub
             </a>
             <a className="inline-flex min-h-11 items-center p-[10px] hover:text-accent" href="#top">
               Top ↑

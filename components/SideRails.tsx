@@ -9,9 +9,6 @@ export default function SideRails() {
   return (
     <>
       <aside className={`${railClass} rail-l bottom-0 left-9`} aria-label="Social links">
-        <a className={linkClass} href={profile.github} target="_blank" rel="noopener">
-          GitHub
-        </a>
         <a className={linkClass} href={profile.linkedin} target="_blank" rel="noopener">
           LinkedIn
         </a>

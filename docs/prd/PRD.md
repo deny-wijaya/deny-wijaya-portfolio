@@ -206,7 +206,7 @@ Dengan ini kelas Tailwind seperti `bg-paper`, `text-ink`, `text-muted`, `border-
 `body::before` (class `backdrop-grid` di `<body>`): `position: fixed; inset: 0; z-index: 0; pointer-events: none;` dua `linear-gradient` 1px warna `--grid-line` (horizontal & vertikal), `background-size: 72px 72px`, `mask-image: radial-gradient(ellipse at 50% 0%, #000 0%, transparent 75%)`. Semua konten di atasnya `position: relative; z-index: 1`.
 
 ### 5.2 Side rails (hanya ≥ 1500px)
-- Kiri (`left: 36px`, `bottom: 0`, fixed, z 40): link **GitHub**, **LinkedIn**; teks vertikal (`writing-mode: vertical-rl; transform: rotate(180deg)`), Mono 12px, letter-spacing 0.12em, muted, padding 6px, gap 18px; di bawahnya garis `1px × 96px` warna muted. Hover: accent.
+- Kiri (`left: 36px`, `bottom: 0`, fixed, z 40): link **LinkedIn** (link GitHub dihapus atas permintaan pemilik situs, 14 Okt 2026); teks vertikal (`writing-mode: vertical-rl; transform: rotate(180deg)`), Mono 12px, letter-spacing 0.12em, muted, padding 6px, gap 18px; di bawahnya garis `1px × 96px` warna muted. Hover: accent.
 - Kanan (`right: 36px`): email `denyekayana@gmail.com` vertikal (tanpa rotate), hover accent + `translateY(-3px)`.
 
 ### 5.3 Skip link
@@ -309,16 +309,15 @@ Flex wrap, align center, gap 12px 18px, padding-bottom 56px (mobile 36px). Uruta
   - H2 **"Let’s build something."**
   - Copy **"I’m open to remote roles and freelance projects. Whether you have a product to build or a question, my inbox is open."**
   - Tombol **`Say hello →`** (`mailto:denyekayana@gmail.com`): inline-flex gap 14px, min-height 64px, padding 0 32px, margin-top 12px, transparan, border 1px accent, teks accent, radius 8px, Mono 16px 500. Hover: bg accent 14%, `box-shadow: 0 0 40px color-mix(in srgb, var(--accent) 40%, transparent)`, panah `translateX(4px)`. < 860px: full width, `justify-content: space-between`.
-- **Channels** `<ul>` (rata kiri): grid 4 kolom, margin-top 96px (mobile 64px), border-top line; li setelah pertama `border-left` line. Tiap item link flex column gap 8px, padding 24px 24px 28px 0 (li berikutnya padding-left 24px), min-height 120px. Label eyebrow muted; nilai 17px ink `word-break: break-word`; hover nilai accent.
+- **Channels** `<ul>` (rata kiri): grid kolom sejumlah item (3 kolom dengan Resume, 2 tanpa), margin-top 96px (mobile 64px), border-top line; li setelah pertama `border-left` line. Tiap item link flex column gap 8px, padding 24px 24px 28px 0 (li berikutnya padding-left 24px), min-height 120px. Label eyebrow muted; nilai 17px ink `word-break: break-word`; hover nilai accent.
   - Email → `denyekayana@gmail.com`
   - LinkedIn → `in/denywijaya14 ↗`
-  - GitHub → `deny-wijaya ↗`
   - Resume → `Download CV (PDF) ↗` (sembunyikan item jika `resumeUrl` null)
   - < 860px: 1 kolom, border-left diganti border-top, padding 18px 0, min-height 0.
 - **Footer**: border-top line; isi `.wrap` flex space-between wrap gap 16px, padding 28px 0 36px, 14px muted:
   - `© {tahun berjalan} Deny Wijaya`
   - `Designed and built with care in Bali.`
-  - Link: LinkedIn, GitHub, `Top ↑` (`#top`), padding 10px, min-height 44px, hover accent.
+  - Link: LinkedIn, `Top ↑` (`#top`), padding 10px, min-height 44px, hover accent.
 
 ### 6.9 Placeholder gambar
 Dipakai selama screenshot belum ada. Wajib jelas sebagai placeholder, bukan UI palsu.
@@ -352,7 +351,7 @@ Semua teks bahasa Inggris, **salin persis**.
 - name: `Deny Wijaya` · shortName: `dw` · title: `Front-End & Mobile Developer`
 - location: `Denpasar, Bali, Indonesia` · timezone: `GMT+8`
 - email: `denyekayana@gmail.com`
-- GitHub: `https://github.com/deny-wijaya` · LinkedIn: `https://www.linkedin.com/in/denywijaya14/`
+- LinkedIn: `https://www.linkedin.com/in/denywijaya14/`
 - available: `true` · availabilityLabel: `Open to remote roles`
 - resumeUrl: `/cv/CV-Deny-Wijaya-2026.pdf`
 - portrait: `/images/dw-pixel.png`, alt `Pixel-art portrait of Deny Wijaya, smiling, in a white shirt against a blue sky`
@@ -445,7 +444,7 @@ Jangan menambah metrik, testimoni, jumlah user, sertifikasi, atau klaim yang tid
 - `alternates.canonical: "/"`, Open Graph (`type: website`, `siteName`, `locale: en_US`), Twitter `summary_large_image`.
 - `app/opengraph-image.tsx` (1200×630, `next/og`): latar `#0A0A0D`, grid samar, `<dw/>` (aksen `#6C8CFF`) kiri atas, nama besar putih `#EDEDF2`, subjudul `Front-End & Mobile Developer · Bali, Indonesia` warna `#8F8FA0`.
 - `app/icon.svg`: kotak 64×64 radius 14 bg `#0A0A0D`, teks `dw` Mono `#6C8CFF`.
-- JSON-LD `Person` (name, jobTitle, url, email, address Denpasar/Bali/ID, sameAs GitHub & LinkedIn).
+- JSON-LD `Person` (name, jobTitle, url, email, address Denpasar/Bali/ID, sameAs LinkedIn).
 - Heading: satu H1 (hero), H2 per section, H3 per proyek/job.
 
 ## 10. Kriteria penerimaan (acceptance)
