@@ -287,7 +287,7 @@ Flex wrap, align center, gap 12px 18px, padding-bottom 56px (mobile 36px). Uruta
 ### 6.6 About (`#about`, nomor `03.`)
 - Title **"Engineering with an eye for detail."** (tanpa intro).
 - Grid 12 kolom, row-gap 48px:
-  - **Kolom 1–3 — figure**: slot potret rasio **3:4**, radius 14px. Gunakan foto asli Deny jika tersedia (`/images/dw-photo.jpg`), jika tidak tampilkan placeholder (§6.9) berlabel `Portrait` / `Optional, 3:4` varian warm. Figcaption eyebrow muted **"Deny Wijaya · Denpasar, Bali"** margin-top 12px. Di bawahnya `<dl>` (margin-top 28px, border-top line), tiap grup padding 12px 0, border-bottom line, `dt` eyebrow muted, `dd` 14px/1.5 margin-top 4px:
+  - **Kolom 1–3 — figure**: slot potret rasio **3:4**, radius 14px, hanya tampil kalau foto asli Deny sudah ada (`profile.aboutPhoto`). Kalau belum ada foto, potret dan figcaption tidak dirender sama sekali, tanpa placeholder (diminta pemilik situs, 14 Okt 2026). Figcaption eyebrow muted **"Deny Wijaya · Denpasar, Bali"** margin-top 12px. Di bawahnya `<dl>` (margin-top 28px bila ada potret, border-top line), tiap grup padding 12px 0, border-bottom line, `dt` eyebrow muted, `dd` 14px/1.5 margin-top 4px:
     - Education: "Bachelor of Information Systems, ITB STIKOM Bali" / "Diploma in Information Management, Politeknik Negeri Bali"
     - Languages: "Indonesian (native), English (professional working)"
   - **Kolom 5–9 — copy**: flex column gap 22px, 3 paragraf (§8). Paragraf 1 ink 23px; paragraf 2–3 soft 19px.

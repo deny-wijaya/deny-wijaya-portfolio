@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { about, profile } from "@/content/site";
 import SectionHeading from "@/components/SectionHeading";
-import ProjectVisual from "@/components/ProjectVisual";
 
 export default function About() {
   return (
@@ -9,26 +8,17 @@ export default function About() {
       <SectionHeading id="about-title" num="03." title={about.title} />
 
       <div className="grid-12 gap-y-12">
-        <figure className="col-start-1 col-end-4 m-0 max-md:max-w-[280px]">
-          {profile.aboutPhoto ? (
-            <div className="relative aspect-[3/4] overflow-hidden rounded-[14px] border border-line">
-              <Image src={profile.aboutPhoto} alt={`Portrait of ${profile.name}`} fill sizes="280px" className="object-cover" />
-            </div>
-          ) : (
-            <ProjectVisual
-              image={null}
-              alt=""
-              title="Portrait"
-              subtitle="Optional, 3:4"
-              ariaLabel="Placeholder for a portrait of Deny Wijaya"
-              warm
-              aspect="3 / 4"
-              sizes="280px"
-              className="rounded-[14px] border border-line"
-            />
+        <div className="col-start-1 col-end-4">
+          {/* The portrait only renders once a real photo is set; there is no placeholder. */}
+          {profile.aboutPhoto && (
+            <figure className="m-0 mb-7 max-md:max-w-[280px]">
+              <div className="relative aspect-[3/4] overflow-hidden rounded-[14px] border border-line">
+                <Image src={profile.aboutPhoto} alt={`Portrait of ${profile.name}`} fill sizes="280px" className="object-cover" />
+              </div>
+              <figcaption className="eyebrow mt-3 text-muted">{about.caption}</figcaption>
+            </figure>
           )}
-          <figcaption className="eyebrow mt-3 text-muted">{about.caption}</figcaption>
-          <dl className="m-0 mt-7 border-t border-line">
+          <dl className="m-0 border-t border-line">
             {about.facts.map((fact) => (
               <div key={fact.label} className="border-b border-line py-3">
                 <dt className="eyebrow text-muted">{fact.label}</dt>
@@ -40,7 +30,7 @@ export default function About() {
               </div>
             ))}
           </dl>
-        </figure>
+        </div>
 
         <div className="col-start-5 col-end-10 flex flex-col gap-[22px]">
           {about.paragraphs.map((text, i) =>
