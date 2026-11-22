@@ -311,8 +311,8 @@ export const expertise = {
     { group: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "HTML & CSS"] },
     { group: "UI systems", items: ["Tailwind CSS", "Material UI", "Vuetify", "Storybook", "Responsive design"] },
     { group: "Mobile", items: ["Flutter", "Dart", "Bloc", "Widgetbook"] },
-    { group: "Back-end & data", items: ["REST APIs", "Node.js", "Go (working)", "Laravel", "Firebase"] },
-    { group: "Workflow", items: ["Git & GitHub", "Vercel", "Webpack", "Figma", "AI-assisted dev (Claude)"] },
+    { group: "Back-end & data", items: ["REST APIs", "Node.js", "Express.js", "Firebase"] },
+    { group: "Workflow", items: ["Git & GitHub", "Vercel", "Webpack", "Claude Design", "AI-assisted dev (Claude)"] },
   ] satisfies SkillGroup[],
 };
 

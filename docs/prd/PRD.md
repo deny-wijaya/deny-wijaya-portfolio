@@ -431,8 +431,8 @@ Principles: `Design fidelity` — `Accurate to the spec, considered where the sp
 | Frontend | React, Next.js, TypeScript, JavaScript, Vue.js, HTML & CSS |
 | UI systems | Tailwind CSS, Material UI, Vuetify, Storybook, Responsive design |
 | Mobile | Flutter, Dart, Bloc, Widgetbook |
-| Back-end & data | REST APIs, Node.js, Go (working), Laravel, Firebase |
-| Workflow | Git & GitHub, Vercel, Webpack, Figma, AI-assisted dev (Claude) |
+| Back-end & data | REST APIs, Node.js, Express.js, Firebase |
+| Workflow | Git & GitHub, Vercel, Webpack, Claude Design, AI-assisted dev (Claude) |
 
 ### Integritas konten
 Jangan menambah metrik, testimoni, jumlah user, sertifikasi, atau klaim yang tidak tertulis di atas. Nomor telepon **tidak** ditampilkan di halaman.
