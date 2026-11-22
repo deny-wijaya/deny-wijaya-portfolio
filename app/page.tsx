@@ -22,7 +22,7 @@ const personJsonLd = {
     addressRegion: "Bali",
     addressCountry: "ID",
   },
-  sameAs: [profile.linkedin],
+  sameAs: [profile.github, profile.linkedin],
 };
 
 export default function Home() {
