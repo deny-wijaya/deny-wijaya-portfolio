@@ -75,7 +75,7 @@ export const hero = {
   terminal: [
     { key: "focus", value: '"front-end & mobile"' },
     { key: "core", value: '["React", "TypeScript", "Next.js"]' },
-    { key: "also", value: '["Vue.js", "Flutter", "Go"]' },
+    { key: "also", value: '["Vue.js", "Flutter"]' },
     { key: "experience", value: '"4+ years"' },
     { key: "based", value: '"Denpasar, Bali · GMT+8"' },
   ],
@@ -92,7 +92,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "karna",
     name: "Karna",
     summary:
-      "An operations platform for appointment-based service businesses (barbershops, salons, spas and beauty clinics), from a single outlet to multi-outlet chains. Released and in its sales phase.",
+      "An operations platform for appointment-based service businesses (barbershops, salons, spas and beauty clinics), from a single outlet to multi-outlet chains. Released and now used by 3 businesses across 9 outlets.",
     points: [
       "Booking and staff scheduling",
       "POS with automatic commissions and tips",
@@ -118,11 +118,11 @@ export const featuredProjects: FeaturedProject[] = [
       },
       {
         title: "Users",
-        body: "Owners and managers work in the web admin; stylists and therapists use the mobile app day to day.",
+        body: "Owners and managers work in the web admin, the front desk uses the Flutter app for bookings and POS, and stylists and therapists use the provider web app.",
       },
       {
         title: "Mobile app · Flutter",
-        body: "Schedules, visit details, customer notes and earnings for stylists and therapists.",
+        body: "Appointment booking and cashier (POS) operations at the front desk. Stylists and therapists use a separate provider web app for schedules, visit details, customer notes and earnings.",
       },
       {
         title: "Web admin · Vue.js",
@@ -134,7 +134,7 @@ export const featuredProjects: FeaturedProject[] = [
       },
       {
         title: "Outcome",
-        body: "Taken from development to a fully featured release, now in its sales phase, kept stable with ongoing fixes.",
+        body: "Taken from early development to a full commercial release, now used by 3 businesses across 9 outlets. Commission and stock tracking that outlets used to do by hand is now automated.",
       },
     ],
   },
@@ -145,7 +145,7 @@ export const featuredProjects: FeaturedProject[] = [
       "The event site for an international trail race in East Bali, listed on the UTMB Index and ITRA.",
     points: [
       "Four race categories with local and foreign pricing",
-      "Race info, rules, gear and accommodation pages",
+      "Race info and accommodation pages",
       "SEO, social sharing, responsive and accessible",
     ],
     pointsLabel: "What the site covers",
@@ -165,7 +165,7 @@ export const featuredProjects: FeaturedProject[] = [
     id: "bali-trail-running",
     name: "Bali Trail Running",
     summary:
-      "A registration platform serving multiple trail running events in Bali, from browsing events to paying for a race slot.",
+      "A registration platform serving multiple trail running events in Bali, handling around 6,000 registrations per event.",
     points: [
       "Event listings and participant sign-up",
       "Race category selection and ticketing",
@@ -217,21 +217,21 @@ export const otherProjects = {
       name: "Dinaran Gold",
       kind: "Web admin",
       summary:
-        "Admin dashboard for a gold trading app: real-time statistics, live gold prices, member and transaction monitoring.",
+        "Admin dashboard for a high-volume gold trading app: real-time user and transaction statistics, live gold-price updates, member management and transaction monitoring.",
       tags: ["React", "TypeScript", "Tailwind"],
     },
     {
       name: "MS Glow Aesthetic Clinic",
       kind: "Web POS",
-      summary: "Digitized patient registration, barcode treatment tracking and pricing across roles.",
-      tags: ["React", "Next.js", "Tailwind"],
+      summary: "Digitized the clinic's manual flow: patient registration, barcode-based treatment tracking from front office to doctor's room, and multi-role pricing for medication and products.",
+      tags: ["React", "Next.js", "Tailwind", "REST API"],
     },
     {
       name: "Luks Pet",
       kind: "Web POS",
       summary:
-        "POS and online booking for pet grooming, built for concurrent bookings; plus the company site.",
-      tags: ["Vue.js", "Vuetify", "Laravel"],
+        "POS with online booking for pet grooming, synced to customer and pet records, with state management optimized to handle concurrent bookings reliably.",
+      tags: ["Vue.js", "Vuetify"],
     },
   ] satisfies OtherProject[],
 };
@@ -242,13 +242,14 @@ export const experience = {
   jobs: [
     {
       tab: "Karna",
-      role: "Software Developer, Mobile & Web Admin",
+      role: "Software Developer (Mobile & Web Admin)",
       company: "PT Karna Pangkal Kaya",
       period: "2023 — Present",
       points: [
-        "Built the Flutter app stylists and therapists use for schedules, visit details, customer notes and earnings.",
-        "Built the Vue.js web admin: booking, staff scheduling, POS, commissions, inventory, memberships and 30+ reports.",
-        "Took Karna from development to a fully featured release, now in its sales phase.",
+        "Built the Vue.js admin dashboard end to end: booking and staff scheduling, POS, automatic commission and tip calculation, recipe-based inventory deduction, memberships, role-based access and 30+ business reports.",
+        "Developed the Flutter app for appointment booking and cashier (POS) operations used at the front desk, plus the provider web app stylists and therapists use for schedules, visit details, customer notes and earnings.",
+        "Took the product from early development to a full commercial release, now used by 3 businesses across 9 outlets.",
+        "Automated commission and stock tracking that outlets previously handled by hand, reducing manual work for outlet staff and owners.",
       ],
       tags: ["Flutter", "Vue.js"],
     },
@@ -256,15 +257,15 @@ export const experience = {
       tab: "Urban Beauty",
       role: "Front-End Developer",
       company: "Urban Beauty Indonesia",
-      period: "Aug 2019 — Present · Denpasar",
+      period: "Aug 2019 — Dec 2026 · Denpasar",
       points: [
-        "Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams.",
-        "Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress.",
-        "Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing.",
-        "Built product activation and distribution tracking for end-to-end visibility of each item's location.",
-        "Ran user interviews with internal teams to simplify complex multi-role workflows.",
+        "Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams (React).",
+        "Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress so users keep working without waiting (Vue.js).",
+        "Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing (React, TypeScript, Material UI).",
+        "Built product activation and distribution tracking, giving management end-to-end visibility of each item's location.",
+        "Ran user interviews with internal teams and used the findings to simplify complex multi-role workflows.",
       ],
-      tags: ["React", "TypeScript", "Vue.js", "Material UI", "Go"],
+      tags: ["React", "TypeScript", "Vue.js", "Material UI"],
     },
     {
       tab: "Destar Studio",
@@ -287,16 +288,16 @@ export const about = {
     {
       label: "Education",
       values: [
-        "Bachelor of Information Systems, ITB STIKOM Bali",
-        "Diploma in Information Management, Politeknik Negeri Bali",
+        "Bachelor of Information Systems, Institut Teknologi dan Bisnis STIKOM Bali, 2018",
+        "Diploma in Information Management, Politeknik Negeri Bali, 2016",
       ],
     },
-    { label: "Languages", values: ["Indonesian (native), English (professional working)"] },
+    { label: "Languages", values: ["Indonesian (native), English (professional working proficiency)"] },
   ],
   paragraphs: [
     "Most of my work sits between a design file and a production codebase. I care about getting that translation right: spacing that matches the spec, states nobody drew, and layouts that hold up at every width, not just the two in the mockup.",
     "Much of what I’ve built replaces a manual process: clinic registrations, warehouse distribution, salon commissions. That means working directly with business owners and end users, running interviews, and asking what a feature is for before deciding how to build it.",
-    "I build interfaces as small, typed, reusable components with clear boundaries, and I use AI-assisted development with Claude every day to move faster while keeping code clean, tested and maintainable.",
+    "I build interfaces as small, typed, reusable components with clear boundaries, and I use AI-assisted development with Claude Code every day to move faster while keeping code clean, tested and maintainable.",
   ],
   principles: [
     { title: "Design fidelity", body: "Accurate to the spec, considered where the spec is silent." },
@@ -310,11 +311,11 @@ export const expertise = {
   title: "Tools I reach for",
   intro: "Curated to what I use in production work. The projects above are the evidence.",
   groups: [
-    { group: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "HTML & CSS"] },
-    { group: "UI systems", items: ["Tailwind CSS", "Material UI", "Vuetify", "Storybook", "Responsive design"] },
-    { group: "Mobile", items: ["Flutter", "Dart", "Bloc", "Widgetbook"] },
-    { group: "Back-end & data", items: ["REST APIs", "Node.js", "Express.js", "Firebase"] },
-    { group: "Workflow", items: ["Git & GitHub", "Vercel", "Webpack", "Claude Design", "AI-assisted dev (Claude)"] },
+    { group: "Frontend", items: ["React", "Next.js", "TypeScript", "JavaScript", "Vue.js", "Tailwind CSS", "Material UI", "Vuetify", "HTML & CSS"] },
+    { group: "Mobile", items: ["Flutter", "Dart", "Bloc"] },
+    { group: "Back-end & data", items: ["Node.js", "Express.js", "REST APIs", "Firebase", "PostgreSQL (basic)"] },
+    { group: "Tools", items: ["Git & GitHub", "Vercel", "Storybook", "Widgetbook", "Webpack", "Figma", "WordPress"] },
+    { group: "Practices", items: ["AI-assisted dev (Claude Code)", "Code review", "User research", "Testing with Vitest"] },
   ] satisfies SkillGroup[],
 };
 

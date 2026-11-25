@@ -245,7 +245,7 @@ Dengan ini kelas Tailwind seperti `bg-paper`, `text-ink`, `text-muted`, `border-
       ```
       focus:      "front-end & mobile"
       core:       ["React", "TypeScript", "Next.js"]
-      also:       ["Vue.js", "Flutter", "Go"]
+      also:       ["Vue.js", "Flutter"]
       experience: "4+ years"
       based:      "Denpasar, Bali · GMT+8"
       status:     "open_to_remote"      ← dt warna muted; tampil hanya jika available
@@ -288,8 +288,8 @@ Flex wrap, align center, gap 12px 18px, padding-bottom 56px (mobile 36px). Uruta
 - Title **"Engineering with an eye for detail."** (tanpa intro).
 - Grid 12 kolom, row-gap 48px:
   - **Kolom 1–3 — figure**: slot potret rasio **3:4**, radius 14px, hanya tampil kalau foto asli Deny sudah ada (`profile.aboutPhoto`). Kalau belum ada foto, potret dan figcaption tidak dirender sama sekali, tanpa placeholder (diminta pemilik situs, 14 Okt 2026). Figcaption eyebrow muted **"Deny Wijaya · Denpasar, Bali"** margin-top 12px. Di bawahnya `<dl>` (margin-top 28px bila ada potret, border-top line), tiap grup padding 12px 0, border-bottom line, `dt` eyebrow muted, `dd` 14px/1.5 margin-top 4px:
-    - Education: "Bachelor of Information Systems, ITB STIKOM Bali" / "Diploma in Information Management, Politeknik Negeri Bali"
-    - Languages: "Indonesian (native), English (professional working)"
+    - Education: "Bachelor of Information Systems, Institut Teknologi dan Bisnis STIKOM Bali, 2018" / "Diploma in Information Management, Politeknik Negeri Bali, 2016"
+    - Languages: "Indonesian (native), English (professional working proficiency)"
   - **Kolom 5–9 — copy**: flex column gap 22px, 3 paragraf (§8). Paragraf 1 ink 23px; paragraf 2–3 soft 19px.
   - **Kolom 5–12 — principles**: `<ul>` grid 2 kolom gap 0 40px, margin-top 24px, border-top line. Tiap li grid `40px 1fr` gap 8px, padding 20px 0, border-bottom line; nomor Mono 12px accent (`01`–`04`); judul 17px 500; deskripsi 15px muted.
 - < 860px: semua satu kolom, figure max-width 280px, principles 1 kolom, paragraf 18px.
@@ -360,28 +360,28 @@ Semua teks bahasa Inggris, **salin persis**.
 ### Featured projects (urutan wajib)
 
 **01 · Karna** (normal)
-- Summary: `An operations platform for appointment-based service businesses (barbershops, salons, spas and beauty clinics), from a single outlet to multi-outlet chains. Released and in its sales phase.`
+- Summary: `An operations platform for appointment-based service businesses (barbershops, salons, spas and beauty clinics), from a single outlet to multi-outlet chains. Released and now used by 3 businesses across 9 outlets.`
 - Points: `Booking and staff scheduling` · `POS with automatic commissions and tips` · `Inventory with recipe-based stock deduction` · `Memberships, role-based access, 30+ reports`
 - Tags: `Flutter` `Vue.js` `Mobile app` `Web admin`
 - Link: `karna.pro` → `https://karna.pro`
 - Placeholder: `Karna — web admin & staff app` / `Replace with real screenshots from karna.pro`
 - Notes:
   - Context — `Appointment-based businesses need bookings, staff, sales and stock to work as one system, whether they run one outlet or a chain.`
-  - Users — `Owners and managers work in the web admin; stylists and therapists use the mobile app day to day.`
-  - Mobile app · Flutter — `Schedules, visit details, customer notes and earnings for stylists and therapists.`
+  - Users — `Owners and managers work in the web admin, the front desk uses the Flutter app for bookings and POS, and stylists and therapists use the provider web app.`
+  - Mobile app · Flutter — `Appointment booking and cashier (POS) operations at the front desk. Stylists and therapists use a separate provider web app for schedules, visit details, customer notes and earnings.`
   - Web admin · Vue.js — `Booking and staff scheduling, POS, automatic commissions and tips, recipe-based inventory, memberships, role-based access and 30+ business reports.`
   - Constraints — `One product serving both single outlets and multi-outlet chains, with different roles seeing different data.`
-  - Outcome — `Taken from development to a fully featured release, now in its sales phase, kept stable with ongoing fixes.`
+  - Outcome — `Taken from early development to a full commercial release, now used by 3 businesses across 9 outlets. Commission and stock tracking that outlets used to do by hand is now automated.`
 
 **02 · Bali Coast Trail** (reversed, placeholder warm)
 - Summary: `The event site for an international trail race in East Bali, listed on the UTMB Index and ITRA.`
-- Points: `Four race categories with local and foreign pricing` · `Race info, rules, gear and accommodation pages` · `SEO, social sharing, responsive and accessible`
+- Points: `Four race categories with local and foreign pricing` · `Race info and accommodation pages` · `SEO, social sharing, responsive and accessible`
 - Tags: `Next.js` `Event site`
 - Link: `balicoasttrail.com` → `https://balicoasttrail.com`
 - Placeholder: `Bali Coast Trail — hero section` / `Replace with a real crop of balicoasttrail.com`
 
 **03 · Bali Trail Running** (normal)
-- Summary: `A registration platform serving multiple trail running events in Bali, from browsing events to paying for a race slot.`
+- Summary: `A registration platform serving multiple trail running events in Bali, handling around 6,000 registrations per event.`
 - Points: `Event listings and participant sign-up` · `Race category selection and ticketing` · `Online payment, including bank-specific promos`
 - Tags: `Web platform` `Registration` `Payments`
 - Link: `app.balitrailrunning.com` → `https://app.balitrailrunning.com`
@@ -398,23 +398,24 @@ Semua teks bahasa Inggris, **salin persis**.
 ### Other noteworthy projects
 | Nama | Jenis | Ringkasan | Tags |
 |---|---|---|---|
-| Dinaran Gold | Web admin | `Admin dashboard for a gold trading app: real-time statistics, live gold prices, member and transaction monitoring.` | React, TypeScript, Tailwind |
-| MS Glow Aesthetic Clinic | Web POS | `Digitized patient registration, barcode treatment tracking and pricing across roles.` | React, Next.js, Tailwind |
-| Luks Pet | Web POS | `POS and online booking for pet grooming, built for concurrent bookings; plus the company site.` | Vue.js, Vuetify, Laravel |
+| Dinaran Gold | Web admin | `Admin dashboard for a high-volume gold trading app: real-time user and transaction statistics, live gold-price updates, member management and transaction monitoring.` | React, TypeScript, Tailwind |
+| MS Glow Aesthetic Clinic | Web POS | `Digitized the clinic's manual flow: patient registration, barcode-based treatment tracking from front office to doctor's room, and multi-role pricing for medication and products.` | React, Next.js, Tailwind, REST API |
+| Luks Pet | Web POS | `POS with online booking for pet grooming, synced to customer and pet records, with state management optimized to handle concurrent bookings reliably.` | Vue.js, Vuetify |
 
 ### Experience (urutan tab)
-1. Tab `Karna` — **Software Developer, Mobile & Web Admin** @ **PT Karna Pangkal Kaya** · `2023 — Present`
-   - `Built the Flutter app stylists and therapists use for schedules, visit details, customer notes and earnings.`
-   - `Built the Vue.js web admin: booking, staff scheduling, POS, commissions, inventory, memberships and 30+ reports.`
-   - `Took Karna from development to a fully featured release, now in its sales phase.`
+1. Tab `Karna` — **Software Developer (Mobile & Web Admin)** @ **PT Karna Pangkal Kaya** · `2023 — Present`
+   - `Built the Vue.js admin dashboard end to end: booking and staff scheduling, POS, automatic commission and tip calculation, recipe-based inventory deduction, memberships, role-based access and 30+ business reports.`
+   - `Developed the Flutter app for appointment booking and cashier (POS) operations used at the front desk, plus the provider web app stylists and therapists use for schedules, visit details, customer notes and earnings.`
+   - `Took the product from early development to a full commercial release, now used by 3 businesses across 9 outlets.`
+   - `Automated commission and stock tracking that outlets previously handled by hand, reducing manual work for outlet staff and owners.`
    - Tags: Flutter, Vue.js
-2. Tab `Urban Beauty` — **Front-End Developer** @ **Urban Beauty Indonesia** · `Aug 2019 — Present · Denpasar`
-   - `Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams.`
-   - `Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress.`
-   - `Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing.`
-   - `Built product activation and distribution tracking for end-to-end visibility of each item's location.`
-   - `Ran user interviews with internal teams to simplify complex multi-role workflows.`
-   - Tags: React, TypeScript, Vue.js, Material UI, Go
+2. Tab `Urban Beauty` — **Front-End Developer** @ **Urban Beauty Indonesia** · `Aug 2019 — Dec 2026 · Denpasar`
+   - `Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams (React).`
+   - `Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress so users keep working without waiting (Vue.js).`
+   - `Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing (React, TypeScript, Material UI).`
+   - `Built product activation and distribution tracking, giving management end-to-end visibility of each item's location.`
+   - `Ran user interviews with internal teams and used the findings to simplify complex multi-role workflows.`
+   - Tags: React, TypeScript, Vue.js, Material UI
 3. Tab `Destar Studio` — **Front-End & WordPress Developer** @ **Destar Studio** · `Feb 2018 — Jul 2019 · Denpasar`
    - `Built client web front-ends in Vue.js integrated with REST APIs.`
    - `Delivered e-commerce sites and company profiles on WordPress, including custom themes.`
@@ -423,18 +424,18 @@ Semua teks bahasa Inggris, **salin persis**.
 ### About
 1. `Most of my work sits between a design file and a production codebase. I care about getting that translation right: spacing that matches the spec, states nobody drew, and layouts that hold up at every width, not just the two in the mockup.`
 2. `Much of what I’ve built replaces a manual process: clinic registrations, warehouse distribution, salon commissions. That means working directly with business owners and end users, running interviews, and asking what a feature is for before deciding how to build it.`
-3. `I build interfaces as small, typed, reusable components with clear boundaries, and I use AI-assisted development with Claude every day to move faster while keeping code clean, tested and maintainable.`
+3. `I build interfaces as small, typed, reusable components with clear boundaries, and I use AI-assisted development with Claude Code every day to move faster while keeping code clean, tested and maintainable.`
 
 Principles: `Design fidelity` — `Accurate to the spec, considered where the spec is silent.` · `Component architecture` — `Reusable building blocks with predictable APIs.` · `Responsive by default` — `Designed for touch, keyboard and every width between.` · `Product context` — `Features shaped by the business problem they solve.`
 
 ### Expertise
 | Grup | Item |
 |---|---|
-| Frontend | React, Next.js, TypeScript, JavaScript, Vue.js, HTML & CSS |
-| UI systems | Tailwind CSS, Material UI, Vuetify, Storybook, Responsive design |
-| Mobile | Flutter, Dart, Bloc, Widgetbook |
-| Back-end & data | REST APIs, Node.js, Express.js, Firebase |
-| Workflow | Git & GitHub, Vercel, Webpack, Claude Design, AI-assisted dev (Claude) |
+| Frontend | React, Next.js, TypeScript, JavaScript, Vue.js, Tailwind CSS, Material UI, Vuetify, HTML & CSS |
+| Mobile | Flutter, Dart, Bloc |
+| Back-end & data | Node.js, Express.js, REST APIs, Firebase, PostgreSQL (basic) |
+| Tools | Git & GitHub, Vercel, Storybook, Widgetbook, Webpack, Figma, WordPress |
+| Practices | AI-assisted dev (Claude Code), Code review, User research, Testing with Vitest |
 
 ### Integritas konten
 Jangan menambah metrik, testimoni, jumlah user, sertifikasi, atau klaim yang tidak tertulis di atas. Nomor telepon **tidak** ditampilkan di halaman.
