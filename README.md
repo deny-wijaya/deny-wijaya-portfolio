@@ -41,11 +41,11 @@ A few details worth knowing:
 | Language | TypeScript in strict mode |
 | Styling | Tailwind CSS 4 with CSS color tokens |
 | Typography | Geist Sans and Geist Mono |
-| Hosting | Vercel, Node.js 24.x |
+| Hosting | Vercel, Node.js 24 or newer |
 
 ## Getting started
 
-You need Node.js 24.x and Yarn 1.
+You need Node.js 24 or newer and Yarn 1.
 
 ```bash
 yarn install
@@ -88,7 +88,7 @@ docs/preference/          house style for project showcase images
 
 ## Deployment
 
-The site is hosted on Vercel and runs on Node.js 24.x, which is pinned in `package.json`. The site URL comes from `NEXT_PUBLIC_SITE_URL` and falls back to `https://denywijaya.com`.
+The site is hosted on Vercel and runs on Node.js 24 or newer (`engines.node` is `>=24` in `package.json`). The site URL comes from `NEXT_PUBLIC_SITE_URL` and falls back to `https://denywijaya.com`.
 
 <br />
 
