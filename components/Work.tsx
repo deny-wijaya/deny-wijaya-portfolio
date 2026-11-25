@@ -32,7 +32,7 @@ function Featured({ project, index }: { project: FeaturedProject; index: number 
       </div>
 
       <div
-        className={`z-[2] row-start-2 -mt-12 flex flex-col items-start gap-[14px] px-3 text-left md:row-start-1 md:mt-0 md:px-0 ${
+        className={`z-[2] row-start-2 mt-6 flex flex-col items-start gap-[14px] px-3 text-left md:row-start-1 md:mt-0 md:px-0 ${
           rev
             ? "md:col-start-1 md:col-end-7"
             : "md:col-start-7 md:col-end-13 md:items-end md:text-right"
