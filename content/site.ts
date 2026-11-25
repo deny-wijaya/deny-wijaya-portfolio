@@ -76,7 +76,7 @@ export const hero = {
     { key: "focus", value: '"front-end & mobile"' },
     { key: "core", value: '["React", "TypeScript", "Next.js"]' },
     { key: "also", value: '["Vue.js", "Flutter", "Go"]' },
-    { key: "experience", value: '"5+ years"' },
+    { key: "experience", value: '"4+ years"' },
     { key: "based", value: '"Denpasar, Bali · GMT+8"' },
   ],
   statusLine: { key: "status", value: '"open_to_remote"' },
@@ -238,7 +238,7 @@ export const otherProjects = {
 
 export const experience = {
   title: "Where I’ve worked",
-  intro: "Five-plus years building business-critical web and mobile software in Bali.",
+  intro: "Four-plus years building business-critical web and mobile software in Bali.",
   jobs: [
     {
       tab: "Karna",
@@ -258,9 +258,11 @@ export const experience = {
       company: "Urban Beauty Indonesia",
       period: "Aug 2019 — Present · Denpasar",
       points: [
-        "Led front-end development of the Urban Distribution System, a semi-ERP used by accounting, warehouse, purchasing and sales teams.",
-        "Built the MS Glow product traceability platform, including QR generation for 1M+ codes per batch.",
-        "Ran user interviews with internal teams to improve complex, multi-role workflows.",
+        "Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams.",
+        "Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress.",
+        "Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing.",
+        "Built product activation and distribution tracking for end-to-end visibility of each item's location.",
+        "Ran user interviews with internal teams to simplify complex multi-role workflows.",
       ],
       tags: ["React", "TypeScript", "Vue.js", "Material UI", "Go"],
     },
@@ -270,10 +272,10 @@ export const experience = {
       company: "Destar Studio",
       period: "Feb 2018 — Jul 2019 · Denpasar",
       points: [
-        "Built client websites and front-ends with Vue.js, integrated with REST APIs.",
+        "Built client web front-ends in Vue.js integrated with REST APIs.",
         "Delivered e-commerce sites and company profiles on WordPress, including custom themes.",
       ],
-      tags: ["Vue.js", "WordPress"],
+      tags: ["Vue.js", "WordPress", "REST API"],
     },
   ] satisfies Job[],
 };

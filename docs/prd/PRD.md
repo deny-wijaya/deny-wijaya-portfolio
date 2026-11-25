@@ -246,7 +246,7 @@ Dengan ini kelas Tailwind seperti `bg-paper`, `text-ink`, `text-muted`, `border-
       focus:      "front-end & mobile"
       core:       ["React", "TypeScript", "Next.js"]
       also:       ["Vue.js", "Flutter", "Go"]
-      experience: "5+ years"
+      experience: "4+ years"
       based:      "Denpasar, Bali · GMT+8"
       status:     "open_to_remote"      ← dt warna muted; tampil hanya jika available
       ```
@@ -278,7 +278,7 @@ Flex wrap, align center, gap 12px 18px, padding-bottom 56px (mobile 36px). Uruta
   - H4 19px 500 -0.01em; paragraf 14.5px muted `flex: 1`; tag Mono 12px muted gap 4px 12px.
 
 ### 6.5 Experience (`#experience`, nomor `02.`)
-- Title **"Where I’ve worked"**, intro **"Five-plus years building business-critical web and mobile software in Bali."**
+- Title **"Where I’ve worked"**, intro **"Four-plus years building business-critical web and mobile software in Bali."**
 - Layout: grid `240px minmax(0,1fr)`, gap 40px, max-width 980px.
 - **Tablist** (WAI-ARIA tabs): kolom vertikal, `border-left: 1px solid var(--line)`. Tab: Mono 13.5px muted, padding 0 20px, min-height 48px, rata kiri, transparan. Hover: ink + bg surface. **Aktif**: accent, bg accent 8%, indikator `::before` 2px di kiri (`left: -1px`, full height) warna accent dengan `box-shadow: 0 0 12px var(--accent)`. Keyboard: ↑/↓/←/→ pindah tab, Home/End; roving tabindex.
 - **< 860px**: tablist jadi baris horizontal (scroll-x), `border-bottom` line, tab `white-space: nowrap`, indikator pindah ke bawah (`bottom: -1px`, tinggi 2px, full width).
@@ -409,14 +409,16 @@ Semua teks bahasa Inggris, **salin persis**.
    - `Took Karna from development to a fully featured release, now in its sales phase.`
    - Tags: Flutter, Vue.js
 2. Tab `Urban Beauty` — **Front-End Developer** @ **Urban Beauty Indonesia** · `Aug 2019 — Present · Denpasar`
-   - `Led front-end development of the Urban Distribution System, a semi-ERP used by accounting, warehouse, purchasing and sales teams.`
-   - `Built the MS Glow product traceability platform, including QR generation for 1M+ codes per batch.`
-   - `Ran user interviews with internal teams to improve complex, multi-role workflows.`
+   - `Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams.`
+   - `Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress.`
+   - `Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing.`
+   - `Built product activation and distribution tracking for end-to-end visibility of each item's location.`
+   - `Ran user interviews with internal teams to simplify complex multi-role workflows.`
    - Tags: React, TypeScript, Vue.js, Material UI, Go
 3. Tab `Destar Studio` — **Front-End & WordPress Developer** @ **Destar Studio** · `Feb 2018 — Jul 2019 · Denpasar`
-   - `Built client websites and front-ends with Vue.js, integrated with REST APIs.`
+   - `Built client web front-ends in Vue.js integrated with REST APIs.`
    - `Delivered e-commerce sites and company profiles on WordPress, including custom themes.`
-   - Tags: Vue.js, WordPress
+   - Tags: Vue.js, WordPress, REST API
 
 ### About
 1. `Most of my work sits between a design file and a production codebase. I care about getting that translation right: spacing that matches the spec, states nobody drew, and layouts that hold up at every width, not just the two in the mockup.`
