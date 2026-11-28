@@ -259,7 +259,7 @@ export const experience = {
       company: "Urban Beauty Indonesia",
       period: "Aug 2019 — Dec 2026 · Denpasar",
       points: [
-        "Led front-end development of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams (React).",
+        "Built the front end of the Urban Distribution System, a semi-ERP for sales, purchasing, inventory, bundling, discounts and partner management, used daily by accounting, warehouse, purchasing and sales teams (React).",
         "Built the MS Glow Product Security traceability platform, generating 1M+ QR codes per batch with background processing and real-time progress so users keep working without waiting (Vue.js).",
         "Delivered multi-level QR aggregation for packing and distribution, with real-time validation that blocks unauthorized codes during packing (React, TypeScript, Material UI).",
         "Built product activation and distribution tracking, giving management end-to-end visibility of each item's location.",
